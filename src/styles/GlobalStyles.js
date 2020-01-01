@@ -7,7 +7,8 @@ const GlobalStyles = createGlobalStyle`
     --yellow: #ffc600;
     --white: #fff;
     --grey: #efefef;
-    --otherGrey: #212529
+    --otherGrey: #212529;
+    --deepBlue:  #141c3a;
   }
   html {
       background-color: var(--otherGrey);

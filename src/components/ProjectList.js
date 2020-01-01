@@ -32,6 +32,10 @@ const SingleProjectStyles = styled.div`
     top: 0;
     left: 0;
   }
+  .image:hover {
+    transition: scale(1.2);
+  }
+
   .title {
     position: absolute;
     display: flex;
@@ -51,10 +55,13 @@ const SingleProjectStyles = styled.div`
     top: 0;
     left: 0;
     opacity: 0;
-    z-index: -1;
+    background: var(--otherGrey);
+    border-radius: 10px;
   }
   .hoverOverlay:hover {
     opacity: 1;
+    border: 1px solid black;
+    transition: ease-in-out 0.5s;
   }
 `;
 
