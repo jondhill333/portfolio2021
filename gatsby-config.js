@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "jonPortfolio2021",
+    title: "Jon Hill",
+    // siteUrl: "",
+    description: "Jon Hill web developer portfolio site",
+    twitter: "@jon_hill33",
   },
   plugins: [
     "gatsby-plugin-styled-components",
