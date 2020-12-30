@@ -27,7 +27,7 @@ const HomePageStyles = styled.div`
 
 export default function HomePage() {
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
       <HomePageStyles>
         <img src={profilePic} alt="Jon Hill" />
@@ -35,9 +35,9 @@ export default function HomePage() {
           The actual UI borrows heavily from the Guardian website but as I am
           trying to become a developer as opposed to a designer, I believed this
           a fair pay off - allowing me to focus more on the technical
-          implementation as I had a ’design template’ to work from.
+          implementation as I had a 'design template' to work from.
         </div>
       </HomePageStyles>
-    </Layout>
+    </>
   );
 }

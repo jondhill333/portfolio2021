@@ -108,36 +108,33 @@ export default function Nav() {
           <Link to="/contact">Contact</Link>
         </div>
         <div className="contactLinks">
-          <Link
-            className="gmail socialLink"
-            href="mailto:jondhill1984@gmail.com"
-          >
+          <a className="gmail socialLink" href="mailto:jondhill1984@gmail.com">
             <img src={gmailLogo} alt="Jon-Hill-gmail" />
-          </Link>
-          <Link
+          </a>
+          <a
             className="github socialLink"
             href="https://github.com/jondhill333"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={githubLogo} alt="Jon-Hill-github-page-link-logo" />
-          </Link>
-          <Link
+          </a>
+          <a
             className="linkedIn  socialLink"
             href="https://www.linkedin.com/in/jonathan-hill-1b293339/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={linkedInLogo} alt="Jon-Hill-linkedIn-page-link-logo" />
-          </Link>
-          <Link
+          </a>
+          <a
             className="twitter socialLink"
             href="https://twitter.com/jon_hill33"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={twitterLogo} alt="Jon-Hill-twitter-page-link-logo" />
-          </Link>
+          </a>
         </div>
       </NavGrid>
     </NavStyles>
