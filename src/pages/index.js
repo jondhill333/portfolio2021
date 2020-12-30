@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-import profilePic from "../assets/profileGitpic.png";
+import profilePic from "../assets/portfolioPic.png";
 
 const HomePageStyles = styled.div`
   width: 80%;
@@ -13,6 +13,8 @@ const HomePageStyles = styled.div`
 
   img {
     border-radius: 50%;
+    width: 400px;
+    height: 400px;
   }
   .about {
     color: var(--white);
