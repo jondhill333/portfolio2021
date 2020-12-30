@@ -6,28 +6,86 @@ import styled from "styled-components";
 const ProjectGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
+  /* grid-template-rows: 300px; */
+  gap: 2.5rem;
   width: 80%;
-  margin: 0 auto;
+  margin: 5vh auto;
+`;
+
+const SingleProjectStyles = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .imageAndTitleDisplay {
+    z-index: 1;
+    display: block;
+  }
+  .imageAndTitleDisplay:hover {
+    display: none;
+  }
+  .image {
+    border-radius: 10px;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .hoverOverlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+  .hoverOverlay:hover {
+    opacity: 1;
+  }
 `;
 
 function SingleProject({ project }) {
   return (
     <>
-      <div>
-        <Link to={`./${project.slug.current}`}>
-          <h2>{project.name}</h2>
-        </Link>
-        <Img fluid={project.image.asset.fluid} alt={project.name} />
-        <p>{project.description}</p>
-        <a href={project.githubLink} target="_blank" rel="noreferrer">
+      <SingleProjectStyles>
+        <div className="imageAndTitleDisplay">
+          <Img
+            fluid={project.image.asset.fluid}
+            alt={project.name}
+            className="image"
+          />
+          <div className="title">
+            <span>{project.name}</span>
+          </div>
+        </div>
+        <div className="hoverOverlay">
+          <p>{project.description}</p>
+          <Link to={`./${project.slug.current}`}>
+            <h4>Learn More</h4>
+          </Link>
+        </div>
+        {/* <a href={project.githubLink} target="_blank" rel="noreferrer">
           Github
         </a>
         <br />
         <a href={project.url} target="_blank" rel="noreferrer">
           Live Site
-        </a>
-      </div>
+        </a> */}
+      </SingleProjectStyles>
     </>
   );
 }
