@@ -1,3 +1,7 @@
+const dotenv = require("dotenv");
+
+dotenv.config({ path: ".env" });
+
 module.exports = {
   siteMetadata: {
     title: "Jon Hill",
@@ -18,6 +22,16 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      // this is the name of the plugin you are adding
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "ymtz527a",
+        dataset: "production",
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
     },
   ],
 };
