@@ -57,11 +57,10 @@ const SingleProjectStyles = styled.div`
     opacity: 0;
     background: var(--otherGrey);
     border-radius: 10px;
+    transition: ease-in-out 0.5s;
   }
   .hoverOverlay:hover {
     opacity: 1;
-    border: 1px solid black;
-    transition: ease-in-out 0.5s;
   }
 `;
 
