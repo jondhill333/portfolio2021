@@ -7,18 +7,25 @@ import GlobalStyles from "../styles/GlobalStyles";
 // import Typography from "../styles/Typography";
 // import Footer from "./Footer";
 
+const ContentStyles = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`;
+
 export default function Layout({ children }) {
   return (
     <>
       <GlobalStyles />
-      {/* <Typography /> */}
-      {/* <SiteBorderStyles> */}
-      {/* <ContentStyles>  */}
-      <Nav />
-      {children}
-      {/* <Footer /> */}
-      {/* </ContentStyles> */}
-      {/* </SiteBorderStyles> */}
+      <ContentStyles>
+        {/* <Typography /> */}
+        {/* <SiteBorderStyles> */}
+        {/* <ContentStyles>  */}
+        <Nav />
+        {children}
+        {/* <Footer /> */}
+        {/* </ContentStyles> */}
+        {/* </SiteBorderStyles> */}
+      </ContentStyles>
     </>
   );
 }

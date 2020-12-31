@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 import profilePic from "../assets/portfolioPic.png";
 
 const HomePageStyles = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 5% auto;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ const HomePageStyles = styled.div`
   }
   .about {
     color: var(--white);
-    padding: 0 4vw;
+    padding: 0 0 0 4vw;
     line-height: 1.4;
     font-size: 3rem;
     text-align: justify;

@@ -8,7 +8,7 @@ const ProjectGridStyles = styled.div`
   grid-template-columns: repeat(3, 1fr);
   /* grid-template-rows: 300px; */
   gap: 2.5rem;
-  width: 80%;
+  width: 100%;
   margin: 5vh auto;
 `;
 

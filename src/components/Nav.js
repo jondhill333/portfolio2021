@@ -21,7 +21,7 @@ const NavStyles = styled.div`
 const NavGrid = styled.div`
   height: 100%;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   color: var(--white);
@@ -47,6 +47,7 @@ const NavGrid = styled.div`
 
     .socialLink {
       margin: 0px 3px 0px 5px;
+      transition: all ease-in-out 0.2s;
     }
 
     .gmail {
