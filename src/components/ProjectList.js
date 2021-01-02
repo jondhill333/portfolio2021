@@ -80,7 +80,7 @@ function SingleProject({ project }) {
         </div>
         <div className="hoverOverlay">
           <p>{project.description}</p>
-          <Link to={`./${project.slug.current}`}>
+          <Link to={`/project/${project.slug.current}`}>
             <h4>Learn More</h4>
           </Link>
         </div>
