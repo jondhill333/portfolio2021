@@ -4,23 +4,26 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 const ProjectFilterStyles = styled.div`
-  .languagesGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    width: 60%;
-    margin: 0 auto;
-  }
-  .language {
-    width: 120px;
-    height: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  justify-items: center;
+  .button {
+    width: 110px;
+    height: 35px;
     background-color: white;
     border: solid red 1px;
+    border-radius: 5px;
+  }
+
+  .language {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0 0.5rem;
-    border-radius: 5px;
   }
   .image {
     width: 25px;
@@ -67,12 +70,13 @@ export default function ProjectsFilter() {
   return (
     <>
       <ProjectFilterStyles>
-        <Link to="/projects">
-          <span className="name">All</span>
-          <span className="count">{projects.nodes.length}</span>
-        </Link>
-        <div className="languagesGrid">
-          {languages.nodes.map((language) => (
+        <div className="button">
+          <Link to="/projects" className="language">
+            <div className="name">All</div>
+          </Link>
+        </div>
+        {languages.nodes.map((language) => (
+          <div className="button">
             <Link
               to={`/language/${language.name}`}
               className="language"
@@ -85,8 +89,8 @@ export default function ProjectsFilter() {
               />
               <div className="name">{language.name}</div>
             </Link>
-          ))}
-        </div>
+          </div>
+        ))}
       </ProjectFilterStyles>
     </>
   );
