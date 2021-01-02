@@ -22,36 +22,6 @@ export default function ProjectsPage({ data, pageContext }) {
   );
 }
 
-// export const query = graphql`
-//   query PizzaQuery($toppingRegex: String) {
-//     pizzas: allSanityPizza(
-//       filter: { toppings: { elemMatch: { name: { regex: $toppingRegex } } } }
-//     ) {
-//       nodes {
-//         name
-//         id
-//         slug {
-//           current
-//         }
-//         toppings {
-//           id
-//           name
-//         }
-//         image {
-//           asset {
-//             fixed(width: 600, height: 200) {
-//               ...GatsbySanityImageFixed
-//             }
-//             fluid(maxWidth: 400) {
-//               ...GatsbySanityImageFluid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
 export const query = graphql`
   query ProjectsQuery($languageRegex: String) {
     projects: allSanityProjects(
