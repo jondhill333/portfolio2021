@@ -35,6 +35,10 @@ const NavGrid = styled.div`
     a {
       color: var(--white);
       text-decoration: none;
+      &[aria-current] {
+        color: var(--yellow);
+        text-decoration: underline;
+      }
     }
   }
   .contactLinks {
@@ -94,6 +98,9 @@ const NavGrid = styled.div`
     .twitter:hover {
       filter: none;
     }
+  }
+  [aria-current] {
+    color: var(--orange);
   }
 `;
 

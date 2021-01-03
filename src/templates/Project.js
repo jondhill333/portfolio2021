@@ -9,7 +9,7 @@ const ProjectPageStyles = styled.div`
   flex-direction: column;
   margin: 0 auto;
   width: 60%;
-  color: white;
+  color: var(--white);
 
   .projectImage {
     width: 600px;

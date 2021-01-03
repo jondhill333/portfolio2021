@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --grey: #efefef;
     --otherGrey: #212529;
     --deepBlue:  #141c3a;
+    --orange: orange;
   }
   html {
       background-color: var(--otherGrey);

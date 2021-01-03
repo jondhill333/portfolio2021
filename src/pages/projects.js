@@ -6,7 +6,7 @@ import ProjectsFilter from "../components/ProjectsFilter";
 import SEO from "../components/SEO";
 
 const ProjectPageStyles = styled.div`
-  color: white;
+  color: var(--white);
 `;
 
 export default function ProjectsPage({ data, pageContext }) {

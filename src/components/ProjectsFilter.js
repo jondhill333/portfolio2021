@@ -13,9 +13,13 @@ const ProjectFilterStyles = styled.div`
   .button {
     width: 110px;
     height: 35px;
-    background-color: white;
-    border: solid red 1px;
+    background-color: var(--white);
+    border: solid var(--orange) 1px;
     border-radius: 5px;
+    transition: 0.5s ease-in-out;
+  }
+  .button:hover {
+    background-color: var(--orange);
   }
 
   .language {
@@ -37,6 +41,9 @@ const ProjectFilterStyles = styled.div`
     font-size: 1.5rem;
     padding: 0 0 0 0.5rem;
     color: black;
+  }
+  [aria-current] {
+    background-color: var(--orange);
   }
 `;
 
@@ -76,7 +83,7 @@ export default function ProjectsFilter() {
           </Link>
         </div>
         {languages.nodes.map((language) => (
-          <div className="button">
+          <div className="button" key={language.id}>
             <Link
               to={`/language/${language.name}`}
               className="language"
