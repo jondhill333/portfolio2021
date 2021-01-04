@@ -65,12 +65,13 @@ const SingleProjectStyles = styled.div`
 `;
 
 function SingleProject({ project }) {
+  console.log(project);
   return (
     <>
       <SingleProjectStyles>
         <div className="imageAndTitleDisplay">
           <Img
-            fluid={project.image.asset.fluid}
+            fluid={project.desktopImage.asset.fluid}
             alt={project.name}
             className="image"
           />

@@ -26,13 +26,16 @@ export default function SingleProjectPage({ data }) {
   console.log(project);
   return (
     <>
-      <SEO title={project.name} image={project.image?.asset?.fluid?.src} />
+      <SEO
+        title={project.name}
+        image={project.desktopImage?.asset?.fluid?.src}
+      />
       <ProjectPageStyles>
         <div>
           <h2>{project.name}</h2>
         </div>
         <Img
-          fluid={project.image.asset.fluid}
+          fluid={project.desktopImage.asset.fluid}
           alt={project.name}
           className="projectImage"
         />
@@ -66,6 +69,7 @@ export const query = graphql`
       description
       githubLink
       id
+      notes
       languages {
         id
         name
@@ -81,7 +85,17 @@ export const query = graphql`
         current
       }
       url
-      image {
+      desktopImage {
+        asset {
+          fixed(width: 800, height: 250) {
+            ...GatsbySanityImageFixed
+          }
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      mobileImage {
         asset {
           fixed(width: 800, height: 250) {
             ...GatsbySanityImageFixed

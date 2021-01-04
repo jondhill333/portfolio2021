@@ -31,6 +31,7 @@ export const query = graphql`
         name
         description
         githubLink
+        notes
         languages {
           id
           name
@@ -47,12 +48,22 @@ export const query = graphql`
           current
         }
         url
-        image {
+        desktopImage {
           asset {
-            fixed(width: 330, height: 250) {
+            fixed(width: 800, height: 250) {
               ...GatsbySanityImageFixed
             }
-            fluid(maxHeight: 500) {
+            fluid(maxWidth: 800) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        mobileImage {
+          asset {
+            fixed(width: 800, height: 250) {
+              ...GatsbySanityImageFixed
+            }
+            fluid(maxWidth: 800) {
               ...GatsbySanityImageFluid
             }
           }
