@@ -32,6 +32,10 @@ export const query = graphql`
         description
         githubLink
         notes
+        tags {
+          name
+          id
+        }
         languages {
           id
           name

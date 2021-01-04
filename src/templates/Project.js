@@ -11,9 +11,13 @@ const ProjectPageStyles = styled.div`
   width: 60%;
   color: var(--white);
 
-  .projectImage {
+  .desktopImage {
     width: 600px;
     height: 400px;
+  }
+  .mobileImage {
+    width: 200px;
+    height: 450px;
   }
   .image {
     width: 25px;
@@ -23,7 +27,6 @@ const ProjectPageStyles = styled.div`
 
 export default function SingleProjectPage({ data }) {
   const { project } = data;
-  console.log(project);
   return (
     <>
       <SEO
@@ -37,10 +40,15 @@ export default function SingleProjectPage({ data }) {
         <Img
           fluid={project.desktopImage.asset.fluid}
           alt={project.name}
-          className="projectImage"
+          className="desktopImage"
+        />
+        <Img
+          fluid={project.mobileImage ? project.mobileImage.asset.fluid : ""}
+          alt={project.name}
+          className="mobileImage"
         />
         {project.languages.map((language) => (
-          <div className="button">
+          <div className="button" key={language.id}>
             <Img
               fluid={language.image.asset.fluid}
               alt={language.name}
@@ -49,7 +57,14 @@ export default function SingleProjectPage({ data }) {
             <div className="name">{language.name}</div>
           </div>
         ))}
+        {project.tags.map((tag) => (
+          <div className="tag" key={tag.id}>
+            <span className="hashtag">#</span>
+            <span className="tagName">{tag.name}</span>
+          </div>
+        ))}
         <div>{project.description}</div>
+        <div>{project.notes}</div>
         <a href={project.githubLink} target="_blank" rel="noreferrer">
           Github
         </a>
@@ -70,6 +85,10 @@ export const query = graphql`
       githubLink
       id
       notes
+      tags {
+        name
+        id
+      }
       languages {
         id
         name
