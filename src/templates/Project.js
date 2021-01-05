@@ -10,15 +10,25 @@ const ProjectPageStyles = styled.div`
   margin: 0 auto;
   width: 60%;
   color: var(--white);
+  position: relative;
 
   .desktopImage {
-    width: 600px;
-    height: 400px;
+    width: 650px;
+    height: 450px;
   }
   .mobileImage {
     width: 200px;
-    height: 450px;
+    height: 400px;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
   }
+  .mobileImage:hover {
+    opacity: 1;
+  }
+
   .image {
     width: 25px;
     height: 25px;
@@ -37,16 +47,17 @@ export default function SingleProjectPage({ data }) {
         <div>
           <h2>{project.name}</h2>
         </div>
-        <Img
-          fluid={project.desktopImage.asset.fluid}
-          alt={project.name}
-          className="desktopImage"
-        />
-        <Img
-          fluid={project.mobileImage ? project.mobileImage.asset.fluid : ""}
-          alt={project.name}
-          className="mobileImage"
-        />
+        {/* <div className="imagesContainer"> */}
+        <div className="desktopImage">
+          <Img fluid={project.desktopImage.asset.fluid} alt={project.name} />
+        </div>
+        <div className="mobileImage">
+          <Img
+            fluid={project.mobileImage ? project.mobileImage.asset.fluid : ""}
+            alt={project.name}
+          />
+        </div>
+        {/* </div> */}
         {project.languages.map((language) => (
           <div className="button" key={language.id}>
             <Img

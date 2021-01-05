@@ -8,7 +8,7 @@ const CustomButtonStyles = styled.div`
     border: solid var(--orange) 1px;
     border-radius: 5px;
     transition: 0.5s ease-in-out;
-    opacity: 0.9;
+    opacity: 0.8;
 
   }
   &:hover {

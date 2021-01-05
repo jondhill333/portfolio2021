@@ -10,6 +10,8 @@ const ProjectPageStyles = styled.div`
   color: var(--white);
   h1 {
     font-family: "Kalam";
+    margin: 0;
+    padding: 0;
     /* margin-left: 45%; */
   }
 `;

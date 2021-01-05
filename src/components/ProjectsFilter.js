@@ -12,6 +12,15 @@ const ProjectFilterStyles = styled.div`
   margin: 0 auto;
   justify-items: center;
 
+  h3 {
+    grid-column: 1 / -1;
+    /* width: 50%; */
+    /* margin: 0 auto; */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
   .language {
     width: 100%;
     height: 100%;
@@ -68,6 +77,7 @@ export default function ProjectsFilter() {
   return (
     <>
       <ProjectFilterStyles>
+        <h3>Click on a button to filter the grid!</h3>
         <CustomButton>
           <Link to="/projects" className="language">
             <div className="name">All</div>

@@ -59,6 +59,7 @@ const SingleProjectStyles = styled.div`
     background: var(--otherGrey);
     border-radius: 10px;
     transition: ease-in-out 0.5s;
+
     .projectDescription {
       font-family: "IBM Plex Mono";
     }

@@ -19,6 +19,9 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 2rem;
   }
+  h1, h2, h3, h4, h5 {
+    font-family: "Kalam";
+  }
 `;
 
 export default GlobalStyles;
