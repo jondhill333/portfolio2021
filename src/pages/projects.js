@@ -8,16 +8,24 @@ import SEO from "../components/SEO";
 
 const ProjectPageStyles = styled.div`
   color: var(--white);
+  h1 {
+    font-family: "Kalam";
+    /* margin-left: 45%; */
+  }
 `;
 
-export default function ProjectsPage({ data, pageContext }) {
+export default function ProjectsPage({ data, context }) {
   const projects = data.projects.nodes;
+  console.log(context);
   return (
     <>
       <SEO title="Projects" />
       <ProjectPageStyles>
-        <ProjectsFilter activeLanguage={pageContext.language} />
-        <CustomButton />
+        <h1>Projects</h1>
+        <ProjectsFilter
+        // activeLanguage={pageContext.language}
+        />
+
         <ProjectList projects={projects} />
       </ProjectPageStyles>
     </>

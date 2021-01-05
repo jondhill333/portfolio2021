@@ -69,7 +69,6 @@ const SingleProjectStyles = styled.div`
 `;
 
 function SingleProject({ project }) {
-  console.log(project);
   return (
     <>
       <SingleProjectStyles>
