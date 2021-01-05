@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import CustomButton from "./customButon";
+import CustomButton from "./customButton";
 
 const ProjectFilterStyles = styled.div`
   display: grid;

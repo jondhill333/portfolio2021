@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import CustomButton from "../components/customButon";
+import CustomButton from "../components/customButton";
 import ProjectList from "../components/ProjectList";
 import ProjectsFilter from "../components/ProjectsFilter";
 import SEO from "../components/SEO";

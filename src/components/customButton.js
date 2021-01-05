@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const CustomButtonStyles = styled.div`
+const CustomButtonStyles = styled.button`
     width: 100%;
     height: 35px;
     background-color: var(--white);
@@ -17,10 +17,10 @@ const CustomButtonStyles = styled.div`
 
 `;
 
-export default function CustomButton({ children }) {
+export default function CustomButton({ children, onClick }) {
   return (
     <>
-      <CustomButtonStyles>{children}</CustomButtonStyles>
+      <CustomButtonStyles onClick={onClick}>{children}</CustomButtonStyles>
     </>
   );
 }
