@@ -45,6 +45,7 @@ const SingleProjectStyles = styled.div`
     height: 100%;
     top: 0;
     left: 0;
+    font-family: "Kalam";
   }
   .hoverOverlay {
     position: absolute;
@@ -58,6 +59,9 @@ const SingleProjectStyles = styled.div`
     background: var(--otherGrey);
     border-radius: 10px;
     transition: ease-in-out 0.5s;
+    .projectDescription {
+      font-family: "IBM Plex Mono";
+    }
   }
   .hoverOverlay:hover {
     opacity: 1;
@@ -80,7 +84,7 @@ function SingleProject({ project }) {
           </div>
         </div>
         <div className="hoverOverlay">
-          <p>{project.description}</p>
+          <p className="projectDescription">{project.description}</p>
           <Link to={`/project/${project.slug.current}`}>
             <h4>Learn More</h4>
           </Link>

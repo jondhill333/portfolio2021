@@ -22,6 +22,7 @@ const HomePageStyles = styled.div`
     line-height: 1.4;
     font-size: 3rem;
     text-align: justify;
+    font-family: "Kalam";
   }
 `;
 

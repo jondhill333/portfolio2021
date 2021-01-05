@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import "normalize.css";
 import GlobalStyles from "../styles/GlobalStyles";
+import "@fontsource/kalam";
+import "@fontsource/ibm-plex-mono";
 
 // import Typography from "../styles/Typography";
 // import Footer from "./Footer";

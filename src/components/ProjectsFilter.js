@@ -28,6 +28,7 @@ const ProjectFilterStyles = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-family: "IBM Plex Mono";
   }
   .image {
     width: 25px;

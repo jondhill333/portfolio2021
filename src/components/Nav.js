@@ -31,6 +31,7 @@ const NavGrid = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-family: "IBM Plex Mono";
 
     a {
       color: var(--white);

@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import CustomButton from "../components/customButon";
 import ProjectList from "../components/ProjectList";
 import ProjectsFilter from "../components/ProjectsFilter";
 import SEO from "../components/SEO";
@@ -16,6 +17,7 @@ export default function ProjectsPage({ data, pageContext }) {
       <SEO title="Projects" />
       <ProjectPageStyles>
         <ProjectsFilter activeLanguage={pageContext.language} />
+        <CustomButton />
         <ProjectList projects={projects} />
       </ProjectPageStyles>
     </>
