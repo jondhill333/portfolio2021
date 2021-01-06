@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
+import CustomButton from "./customButton";
 
 const ProjectGridStyles = styled.div`
   display: grid;
@@ -46,6 +47,7 @@ const SingleProjectStyles = styled.div`
     top: 0;
     left: 0;
     font-family: "Kalam";
+    font-size: 3.5rem;
   }
   .hoverOverlay {
     position: absolute;
@@ -62,10 +64,20 @@ const SingleProjectStyles = styled.div`
 
     .projectDescription {
       font-family: "IBM Plex Mono";
+      text-align: center;
     }
   }
   .hoverOverlay:hover {
     opacity: 1;
+  }
+
+  a {
+    text-align: center;
+    color: var(--white);
+    transition: ease-in-out 0.5s;
+    &:hover {
+      color: var(--orange);
+    }
   }
 `;
 
@@ -85,9 +97,11 @@ function SingleProject({ project }) {
         </div>
         <div className="hoverOverlay">
           <p className="projectDescription">{project.description}</p>
+          {/* <button type="button" className="linkToprojectPage"> */}
           <Link to={`/project/${project.slug.current}`}>
-            <h4>Learn More</h4>
+            <h3>Learn More</h3>
           </Link>
+          {/* </button> */}
         </div>
         {/* <a href={project.githubLink} target="_blank" rel="noreferrer">
           Github
