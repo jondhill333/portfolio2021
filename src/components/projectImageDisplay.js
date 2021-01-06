@@ -8,7 +8,7 @@ import { AiOutlineDoubleRight as Right } from "react-icons/ai";
 
 const ProjectImageDisplayStyles = styled.div`
   width: 100%;
-  height: 500px;
+  height: 400px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -16,34 +16,65 @@ const ProjectImageDisplayStyles = styled.div`
 
   .desktopImage {
     width: 100%;
-    height: 450px;
+    height: 400px;
     position: absolute;
     top: 0;
+    transition: ease-in-out 0.5s;
+    /* transform: translateX(400px); */
   }
   .mobileImage {
-    width: 200px;
+    width: 175px;
     height: 400px;
     position: absolute;
     top: 0;
     transition: ease-in-out 0.5s;
   }
-
-  .buttonContainer {
-    position: absolute;
-    bottom: 1%;
-    width: 120px;
-    font-size: 1.5rem;
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 2.5s;
   }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .arrow {
-    color: red;
+    color: var(--orange);
     position: absolute;
-    height: 30px;
+    background-color: grey;
+    opacity: 0.5;
+    border: none;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
   }
   .right {
-    right: 1%;
+    right: 0;
+    bottom: 48%;
   }
   .left {
-    left: 1%;
+    left: 0;
+    bottom: 48%;
   }
 `;
 
@@ -61,12 +92,12 @@ export default function ProjectImageDisplay({ project }) {
     <>
       <ProjectImageDisplayStyles>
         {isDesktopImage === "desktop" && (
-          <div className="desktopImage">
+          <div className="desktopImage fade">
             <Img fluid={project.desktopImage.asset.fluid} alt={project.name} />
           </div>
         )}
         {isDesktopImage === "mobile" && (
-          <div className="mobileImage">
+          <div className="mobileImage fade">
             <Img
               fluid={project.mobileImage ? project.mobileImage.asset.fluid : ""}
               alt={project.name}
@@ -76,17 +107,9 @@ export default function ProjectImageDisplay({ project }) {
         <button onClick={handleClick} type="button" className="arrow left">
           <Left />
         </button>
-        <button type="button" className=" arrow right">
+        <button onClick={handleClick} type="button" className=" arrow right">
           <Right />
         </button>
-
-        {/* <div className="buttonContainer"> */}
-
-        {/* <CustomButton onClick={handleClick}>
-            <div>
-              See {isDesktopImage === "desktop" ? "mobile" : "desktop"} image
-            </div>
-          </CustomButton> */}
       </ProjectImageDisplayStyles>
     </>
   );
