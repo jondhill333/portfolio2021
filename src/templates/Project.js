@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import SEO from "../components/SEO";
 import CustomButton from "../components/customButton";
+import ProjectImageDisplay from "../components/projectImageDisplay";
 
 const ProjectPageStyles = styled.div`
   display: flex;
@@ -13,23 +14,6 @@ const ProjectPageStyles = styled.div`
   color: var(--white);
   position: relative;
 
-  .desktopImage {
-    width: 650px;
-    height: 450px;
-  }
-  .mobileImage {
-    width: 200px;
-    height: 400px;
-    position: absolute;
-    top: 5%;
-    left: 30%;
-    transition: ease-in-out 0.5s;
-  }
-
-  .buttonContainer {
-    position: absolute;
-  }
-
   .image {
     width: 25px;
     height: 25px;
@@ -37,19 +21,8 @@ const ProjectPageStyles = styled.div`
 `;
 
 export default function SingleProjectPage({ data }) {
-  const [isDesktopImage, setIsDesktopImage] = useState("desktop");
-
-  function handleClick() {
-    console.log("clicked");
-    console.log(isDesktopImage);
-    if (isDesktopImage === "desktop") {
-      setIsDesktopImage("mobile");
-    } else {
-      setIsDesktopImage("desktop");
-    }
-  }
-
   const { project } = data;
+
   return (
     <>
       <SEO
@@ -57,27 +30,8 @@ export default function SingleProjectPage({ data }) {
         image={project.desktopImage?.asset?.fluid?.src}
       />
       <ProjectPageStyles>
-        <div>
-          <h2>{project.name}</h2>
-        </div>
-        {isDesktopImage === "desktop" && (
-          <div className="desktopImage">
-            <Img fluid={project.desktopImage.asset.fluid} alt={project.name} />
-          </div>
-        )}
-        {isDesktopImage === "mobile" && (
-          <div className="mobileImage">
-            <Img
-              fluid={project.mobileImage ? project.mobileImage.asset.fluid : ""}
-              alt={project.name}
-            />
-          </div>
-        )}
-        <div className="buttonContainer">
-          <CustomButton onClick={handleClick}>
-            See {isDesktopImage === "desktop" ? "mobile" : "desktop"} image
-          </CustomButton>
-        </div>
+        <h2>{project.name}</h2>
+        <ProjectImageDisplay project={project} />
         {project.languages.map((language) => (
           <div className="button" key={language.id}>
             <Img
