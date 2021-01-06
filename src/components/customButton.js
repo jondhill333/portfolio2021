@@ -9,6 +9,7 @@ const CustomButtonStyles = styled.button`
     border-radius: 5px;
     transition: 0.5s ease-in-out;
     opacity: 0.8;
+    padding: 0;
 
   }
   &:hover {
