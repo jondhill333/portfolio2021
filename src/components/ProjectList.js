@@ -11,6 +11,16 @@ const ProjectGridStyles = styled.div`
   gap: 2.5rem;
   width: 100%;
   margin: 5vh auto;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 300px;
+  }
 `;
 
 const SingleProjectStyles = styled.div`
@@ -87,7 +97,7 @@ function SingleProject({ project }) {
       <SingleProjectStyles>
         <div className="imageAndTitleDisplay">
           <Img
-            fluid={project.desktopImage.asset.fluid}
+            fixed={project.desktopImage.asset.fixed}
             alt={project.name}
             className="image"
           />
@@ -97,19 +107,10 @@ function SingleProject({ project }) {
         </div>
         <div className="hoverOverlay">
           <p className="projectDescription">{project.description}</p>
-          {/* <button type="button" className="linkToprojectPage"> */}
           <Link to={`/project/${project.slug.current}`}>
             <h3>Learn More</h3>
           </Link>
-          {/* </button> */}
         </div>
-        {/* <a href={project.githubLink} target="_blank" rel="noreferrer">
-          Github
-        </a>
-        <br />
-        <a href={project.url} target="_blank" rel="noreferrer">
-          Live Site
-        </a> */}
       </SingleProjectStyles>
     </>
   );

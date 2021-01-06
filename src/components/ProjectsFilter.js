@@ -14,8 +14,6 @@ const ProjectFilterStyles = styled.div`
 
   h3 {
     grid-column: 1 / -1;
-    /* width: 50%; */
-    /* margin: 0 auto; */
     text-align: center;
     margin: 0;
     padding: 0;

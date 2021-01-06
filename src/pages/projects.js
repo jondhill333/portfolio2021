@@ -12,22 +12,17 @@ const ProjectPageStyles = styled.div`
     font-family: "Kalam";
     margin: 0;
     padding: 0;
-    /* margin-left: 45%; */
   }
 `;
 
-export default function ProjectsPage({ data, context }) {
+export default function ProjectsPage({ data }) {
   const projects = data.projects.nodes;
-  console.log(context);
   return (
     <>
       <SEO title="Projects" />
       <ProjectPageStyles>
         <h1>Projects</h1>
-        <ProjectsFilter
-        // activeLanguage={pageContext.language}
-        />
-
+        <ProjectsFilter />
         <ProjectList projects={projects} />
       </ProjectPageStyles>
     </>
@@ -66,7 +61,7 @@ export const query = graphql`
         url
         desktopImage {
           asset {
-            fixed(width: 800, height: 250) {
+            fixed(width: 325, height: 220) {
               ...GatsbySanityImageFixed
             }
             fluid(maxWidth: 800) {
