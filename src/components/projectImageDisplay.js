@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import CustomButton from "./customButton";
+import { AiOutlineDoubleLeft as Left } from "react-icons/ai";
+import { AiOutlineDoubleRight as Right } from "react-icons/ai";
 
 const ProjectImageDisplayStyles = styled.div`
   width: 100%;
@@ -32,6 +34,17 @@ const ProjectImageDisplayStyles = styled.div`
     width: 120px;
     font-size: 1.5rem;
   }
+  .arrow {
+    color: red;
+    position: absolute;
+    height: 30px;
+  }
+  .right {
+    right: 1%;
+  }
+  .left {
+    left: 1%;
+  }
 `;
 
 export default function ProjectImageDisplay({ project }) {
@@ -60,13 +73,20 @@ export default function ProjectImageDisplay({ project }) {
             />
           </div>
         )}
-        <div className="buttonContainer">
-          <CustomButton onClick={handleClick}>
+        <button onClick={handleClick} type="button" className="arrow left">
+          <Left />
+        </button>
+        <button type="button" className=" arrow right">
+          <Right />
+        </button>
+
+        {/* <div className="buttonContainer"> */}
+
+        {/* <CustomButton onClick={handleClick}>
             <div>
               See {isDesktopImage === "desktop" ? "mobile" : "desktop"} image
             </div>
-          </CustomButton>
-        </div>
+          </CustomButton> */}
       </ProjectImageDisplayStyles>
     </>
   );
