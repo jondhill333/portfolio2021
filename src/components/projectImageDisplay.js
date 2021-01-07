@@ -14,6 +14,12 @@ const ProjectImageDisplayStyles = styled.div`
     position: absolute;
     left: 38%;
   }
+  a > span {
+    background-color: grey;
+    color: red;
+    padding: 10px;
+    border-radius: 3px;
+  }
 `;
 
 export default function ProjectImageDisplay({ project }) {
