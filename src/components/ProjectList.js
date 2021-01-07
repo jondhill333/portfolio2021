@@ -75,6 +75,7 @@ const SingleProjectStyles = styled.div`
     .projectDescription {
       font-family: "IBM Plex Mono";
       text-align: center;
+      padding: 10px 0;
     }
   }
   .hoverOverlay:hover {
@@ -88,6 +89,13 @@ const SingleProjectStyles = styled.div`
     &:hover {
       color: var(--orange);
     }
+  }
+  h3 {
+    font-size: 2.5rem;
+    position: absolute;
+    bottom: 20px;
+    left: 32%;
+    text-align: center;
   }
 `;
 
