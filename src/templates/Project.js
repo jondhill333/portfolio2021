@@ -173,12 +173,32 @@ export const query = graphql`
           }
         }
       }
-      mobileImage {
+      desktopImageTwo {
         asset {
           fixed(width: 800, height: 250) {
             ...GatsbySanityImageFixed
           }
           fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      desktopImageThree {
+        asset {
+          fixed(width: 800, height: 250) {
+            ...GatsbySanityImageFixed
+          }
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      mobileImage {
+        asset {
+          fixed(width: 150, height: 330) {
+            ...GatsbySanityImageFixed
+          }
+          fluid(maxWidth: 200) {
             ...GatsbySanityImageFluid
           }
         }

@@ -12,11 +12,11 @@ const GlobalStyles = createGlobalStyle`
     --orange: orange;
   }
   html {
-      background-color: var(--otherGrey);
       /* opacity: 0.7; */
       font-size: 10px;
   }
   body {
+      background-color: var(--otherGrey);
     font-size: 2rem;
   }
   h1, h2, h3, h4, h5 {
