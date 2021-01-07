@@ -13,6 +13,12 @@ const ProjectPageStyles = styled.div`
   color: var(--white);
   position: relative;
   font-family: "IBM Plex Mono";
+  section {
+    margin: 2vh 0 2vh 0;
+  }
+  h2 {
+    font-size: 3rem;
+  }
 
   .langAndTagsContainer {
     width: 100%;
@@ -20,7 +26,6 @@ const ProjectPageStyles = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
-    margin: 2vh 0 2vh 0;
   }
 
   .languagesContainer {
@@ -29,26 +34,28 @@ const ProjectPageStyles = styled.div`
     grid-template-rows: 40px;
     gap: 10px;
     padding-left: 10px;
+    margin: 2vh 0 2vh 0;
   }
   .language {
     display: flex;
     flex-direction: row;
-    height: 35px;
+    height: 38px;
     background-color: var(--white);
     width: 120px;
     align-items: center;
-    margin: 2px 2px;
     border: 1px solid var(--orange);
     border-radius: 3px;
   }
+
   .image {
     width: 25px;
     height: 25px;
-    margin: 5px 0 5px 3px;
+    margin: 0 0 0 3px;
+    padding: 2px 0;
   }
   .name {
     color: black;
-    padding: 5px 0 5px 3px;
+    margin: 0 0 0 3px;
     font-size: 1.5rem;
   }
 
@@ -90,9 +97,9 @@ export default function SingleProjectPage({ data }) {
         image={project.desktopImage?.asset?.fluid?.src}
       />
       <ProjectPageStyles>
-        <h2>{project.name}</h2>
+        <h1>{project.name}</h1>
         <ProjectImageDisplay project={project} />
-        <div className="langAndTagsContainer">
+        <section className="langAndTagsContainer">
           <div className="languagesContainer">
             {project.languages.map((language) => (
               <div className="language" key={language.id}>
@@ -113,7 +120,7 @@ export default function SingleProjectPage({ data }) {
               </div>
             ))}
           </div>
-        </div>
+        </section>
         <section className="content description">
           <h2>Description</h2>
           <p>{project.description}</p>
@@ -165,37 +172,37 @@ export const query = graphql`
       url
       desktopImage {
         asset {
-          fixed(width: 800, height: 250) {
+          fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxWidth: 800) {
+          fluid(maxHeight: 400) {
             ...GatsbySanityImageFluid
           }
         }
       }
       desktopImageTwo {
         asset {
-          fixed(width: 800, height: 250) {
+          fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxWidth: 800) {
+          fluid(maxHeight: 400) {
             ...GatsbySanityImageFluid
           }
         }
       }
       desktopImageThree {
         asset {
-          fixed(width: 800, height: 250) {
+          fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxWidth: 800) {
+          fluid(maxHeight: 400) {
             ...GatsbySanityImageFluid
           }
         }
       }
       mobileImage {
         asset {
-          fixed(width: 150, height: 330) {
+          fixed(width: 175, height: 400) {
             ...GatsbySanityImageFixed
           }
           fluid(maxWidth: 200) {

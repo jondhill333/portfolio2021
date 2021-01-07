@@ -22,6 +22,9 @@ const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5 {
     font-family: "Kalam";
   }
+  h1 {
+    margin: 2vh 0 3vh 0;
+  }
 `;
 
 export default GlobalStyles;

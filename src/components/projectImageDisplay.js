@@ -7,7 +7,6 @@ const ProjectImageDisplayStyles = styled.div`
   width: 100%;
   height: 400px;
   position: relative;
-
   .mobileImage {
     display: flex;
     align-items: center;
