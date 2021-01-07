@@ -23,17 +23,17 @@ export default function ProjectImageDisplay({ project }) {
       <ProjectImageDisplayStyles>
         <Carousel>
           <Carousel.Item>
-            <Img fluid={project.desktopImage.asset.fluid} alt={project.name} />
+            <Img fixed={project.desktopImage.asset.fixed} alt={project.name} />
           </Carousel.Item>
           <Carousel.Item>
             <Img
-              fluid={project.desktopImageTwo.asset.fluid}
+              fixed={project.desktopImageTwo.asset.fixed}
               alt={project.name}
             />
           </Carousel.Item>
           <Carousel.Item>
             <Img
-              fluid={project.desktopImageThree.asset.fluid}
+              fixed={project.desktopImageThree.asset.fixed}
               alt={project.name}
             />
           </Carousel.Item>
