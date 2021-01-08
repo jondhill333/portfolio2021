@@ -20,9 +20,10 @@ const NavStyles = styled.div`
   .logo {
     font-family: "Kalam";
     font-size: 3.2rem;
-    padding: 0 0 0 3px;
+    padding: 0 0 0 5px;
     transform: translateY(5px);
-    color: var(--yellow);
+    /* color: var(--yellow); */
+    transform: translateY(1px) rotate(-2deg);
   }
 
   .pageLinks {
@@ -30,6 +31,7 @@ const NavStyles = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     font-family: "IBM Plex Mono";
+    transform: translateY(1px);
 
     a {
       color: var(--white);
