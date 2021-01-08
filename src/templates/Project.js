@@ -131,7 +131,7 @@ export default function SingleProjectPage({ data }) {
         </section>
         <section className="projectLinks">
           <a href={project.githubLink} target="_blank" rel="noreferrer">
-            Github
+            Github Repo
           </a>
           <br />
           <a href={project.url} target="_blank" rel="noreferrer">

@@ -1,19 +1,11 @@
-import { Link } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
-
-import githubLogo from "../assets/iconmonstr-github-3.svg";
-import twitterLogo from "../assets/icons8-twitter.svg";
-import linkedInLogo from "../assets/iconmonstr-linkedin-3.svg";
-import gmailLogo from "../assets/New_Logo_Gmail.svg";
 
 const FooterStyles = styled.div`
   color: white;
   font-family: "IBM Plex Mono";
   width: 100%;
   text-align: center;
-  position: relative;
-  bottom: 0;
   border-top: solid var(--white) 1px;
   margin: 0 auto;
   height: 40px;

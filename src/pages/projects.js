@@ -6,17 +6,28 @@ import ProjectList from "../components/ProjectList";
 import ProjectsFilter from "../components/ProjectsFilter";
 import SEO from "../components/SEO";
 
+import Footer from "../components/Footer";
+
 const ProjectPageStyles = styled.div`
   color: var(--white);
+  height: 1000px;
+  position: relative;
   h1 {
     font-family: "Kalam";
     margin: 0;
     padding: 0;
   }
+  .projectsPageFooter {
+    position: relative;
+    bottom: 0;
+  }
 `;
 
 export default function ProjectsPage({ data }) {
-  const projects = data.projects.nodes;
+  const projects = data.projects.nodes.sort(
+    (a, b) => Date.parse(b.date) - Date.parse(a.date)
+  );
+
   return (
     <>
       <SEO title="Projects" />
@@ -25,6 +36,9 @@ export default function ProjectsPage({ data }) {
         <ProjectsFilter />
         <ProjectList projects={projects} />
       </ProjectPageStyles>
+      <div className="projectsPageFooter">
+        <Footer />
+      </div>
     </>
   );
 }
@@ -39,6 +53,7 @@ export const query = graphql`
         description
         githubLink
         notes
+        date
         tags {
           name
           id

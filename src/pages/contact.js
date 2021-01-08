@@ -3,32 +3,29 @@ import styled from "styled-components";
 import SEO from "../components/SEO";
 import CV from "../assets/Jonathan_Hill_CV_WD.pdf";
 
+import Footer from "../components/Footer";
+
 const ContactPageStyles = styled.div`
   width: 60%;
-  /* height: 100%; */
   margin: 4vh auto;
   display: flex;
   flex-direction: column;
   font-family: "IBM Plex Mono";
   color: var(--white);
-  height: 76vh;
-
-  h1 {
-    /* margin: 0; */
-  }
   section {
     margin-bottom: 4vh;
   }
   a {
-    /* color: blue; */
     &:hover {
       color: var(--orange);
     }
   }
-
-  .intro {
-  }
-  .resume {
+  .contactPageFooter {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
   }
 `;
 
@@ -43,7 +40,7 @@ export default function ContactPage() {
             I am interested in paid work, volunteer work, open source,
             contract/freelance or simply connecting for study purposes. Please
             use the links at the top of the page to get in contact with me. I
-            welcome any oppurtunity to connnect with like-minded people so we
+            welcome any opportunity to connnect with like-minded people so we
             can better ourselves and build a happier future.
           </p>
         </section>
@@ -57,6 +54,9 @@ export default function ContactPage() {
             .
           </p>
         </section>
+        <div className="contactPageFooter">
+          <Footer />
+        </div>
       </ContactPageStyles>
     </>
   );
