@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 const ContactPageStyles = styled.div`
   width: 60%;
-  margin: 4vh auto;
+  margin: 1% auto;
   display: flex;
   flex-direction: column;
   font-family: "IBM Plex Mono";
