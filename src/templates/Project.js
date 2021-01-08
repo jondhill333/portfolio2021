@@ -45,6 +45,7 @@ const ProjectPageStyles = styled.div`
     align-items: center;
     border: 1px solid var(--orange);
     border-radius: 3px;
+    line-height: 1.1;
   }
 
   .image {
@@ -55,8 +56,8 @@ const ProjectPageStyles = styled.div`
   }
   .name {
     color: black;
-    margin: 0 0 0 3px;
-    font-size: 1.5rem;
+    margin: 0 0 0 4px;
+    font-size: 1.4rem;
   }
 
   .tagsContainer {
