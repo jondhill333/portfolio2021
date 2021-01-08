@@ -7,9 +7,10 @@ import profilePic from "../assets/portfolioPic.png";
 
 const HomePageStyles = styled.div`
   width: 100%;
-  margin: 5% auto;
+  margin: 0% auto;
   display: flex;
   align-items: center;
+  height: 84vh;
 
   img {
     border-radius: 50%;

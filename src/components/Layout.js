@@ -8,11 +8,13 @@ import "@fontsource/kalam";
 import "@fontsource/ibm-plex-mono";
 
 // import Typography from "../styles/Typography";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 const ContentStyles = styled.div`
   width: 80%;
   margin: 0 auto;
+  min-height: 100%;
+  position: relative;
 `;
 
 export default function Layout({ children }) {
@@ -28,6 +30,7 @@ export default function Layout({ children }) {
         {/* <Footer /> */}
         {/* </ContentStyles> */}
         {/* </SiteBorderStyles> */}
+        <Footer />
       </ContentStyles>
     </>
   );

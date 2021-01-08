@@ -5,11 +5,14 @@ import CV from "../assets/Jonathan_Hill_CV_WD.pdf";
 
 const ContactPageStyles = styled.div`
   width: 60%;
+  /* height: 100%; */
   margin: 4vh auto;
   display: flex;
   flex-direction: column;
   font-family: "IBM Plex Mono";
   color: var(--white);
+  height: 76vh;
+
   h1 {
     /* margin: 0; */
   }
@@ -46,8 +49,8 @@ export default function ContactPage() {
         </section>
         <section>
           <p className="resume">
-            For perspectove employers - please a downloadable version of my
-            current resume/CV is avaiable{" "}
+            For perspective employers (or if you’re just a curious soul) please
+            find a downloadable version of my current resume/CV{" "}
             <a href={CV} download>
               here
             </a>
