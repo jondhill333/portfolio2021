@@ -6,9 +6,9 @@ import CustomButton from "./customButton";
 
 const ProjectFilterStyles = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   justify-items: center;
 
