@@ -30,6 +30,8 @@ const HomePageStyles = styled.div`
     font-size: 3rem;
     text-align: justify;
     font-family: "Kalam";
+    display: flex;
+    align-items: center;
   }
   .indexPageFooter {
     position: absolute;
@@ -46,10 +48,10 @@ export default function HomePage() {
         <section>
           <img src={profilePic} alt="Jon Hill" />
           <div className="about">
-            The actual UI borrows heavily from the Guardian website but as I am
-            trying to become a developer as opposed to a designer, I believed
-            this a fair pay off - allowing me to focus more on the technical
-            implementation as I had a 'design template' to work from.
+            Hi, I&#39;m Jon and I’m a developer based in Crete, Greece. I mainly
+            focus on the Front End with an aim to go Full Stack. I want to build
+            simple, performant and great looking products. I like panda&#39;s,
+            red wine and mountains &#46;&#46;&#46; amongst others things.
           </div>
         </section>
         <div className="indexPageFooter">
