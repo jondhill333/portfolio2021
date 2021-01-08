@@ -14,7 +14,7 @@ const ProjectPageStyles = styled.div`
   position: relative;
   h1 {
     font-family: "Kalam";
-    margin: 0;
+    margin: 2% 0 1% 10%;
     padding: 0;
   }
   .projectsPageFooter {

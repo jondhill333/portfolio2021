@@ -8,7 +8,8 @@ import Footer from "../components/Footer";
 
 const HomePageStyles = styled.div`
   width: 100%;
-  margin: 0% auto;
+  margin: 0 auto;
+  padding: 8% 0;
   display: flex;
   align-items: center;
   flex-direction: column;
