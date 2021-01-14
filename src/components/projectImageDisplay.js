@@ -4,9 +4,14 @@ import styled from "styled-components";
 import Carousel from "react-bootstrap/Carousel";
 
 const ProjectImageDisplayStyles = styled.div`
-  width: 100%;
+  width: 600px;
   height: 400px;
   position: relative;
+  display: flex;
+  .carousel {
+    width: 100%;
+  }
+
   .mobileImage {
     display: flex;
     align-items: center;
@@ -20,13 +25,24 @@ const ProjectImageDisplayStyles = styled.div`
     padding: 10px;
     border-radius: 3px;
   }
+  @media (max-width: 600px) {
+    width: 400px;
+    height: 400px;
+    .mobileImage {
+      left: 29%;
+    }
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+    height: 400px;
+  }
 `;
 
 export default function ProjectImageDisplay({ project }) {
   return (
     <>
       <ProjectImageDisplayStyles>
-        <Carousel>
+        <Carousel className="carousel">
           <Carousel.Item>
             <Img fixed={project.desktopImage.asset.fixed} alt={project.name} />
           </Carousel.Item>
@@ -42,7 +58,7 @@ export default function ProjectImageDisplay({ project }) {
               alt={project.name}
             />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item className="mobileImageContainer">
             <Img
               className="mobileImage"
               fixed={project.mobileImage.asset.fixed}

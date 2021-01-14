@@ -13,6 +13,11 @@ const ProjectPageStyles = styled.div`
   color: var(--white);
   position: relative;
   font-family: "IBM Plex Mono";
+  align-items: center;
+  .titleContainer {
+    width: 600px;
+    text-align: start;
+  }
   section {
     margin: 2vh 0 2vh 0;
   }
@@ -21,7 +26,7 @@ const ProjectPageStyles = styled.div`
   }
 
   .langAndTagsContainer {
-    width: 100%;
+    width: 600px;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -68,12 +73,15 @@ const ProjectPageStyles = styled.div`
     padding-right: 10px;
   }
   .content {
+    width: 600px;
+    text-align: start;
   }
   .description {
   }
   .notes {
   }
   .projectLinks {
+    width: 600px;
     margin: 2vh 0 2vh 0;
     display: flex;
     flex-direction: row;
@@ -85,6 +93,80 @@ const ProjectPageStyles = styled.div`
     &:hover {
       color: var(--orange);
     }
+  }
+  @media (max-width: 1250px) {
+    width: 80%;
+  }
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    .titleContainer {
+      width: 400px;
+      text-align: start;
+    }
+    .langAndTagsContainer {
+      width: 400px;
+      /* height: 400px; */
+    }
+    .language {
+      height: 28px;
+      width: 100px;
+    }
+    .tagsContainer {
+      grid-template-columns: 1fr;
+    }
+    .image {
+      width: 20px;
+      height: 20px;
+      margin: 0 0 0 2px;
+      padding: 1px 0;
+    }
+    .name {
+      margin: 0 0 0 2px;
+      font-size: 1.1rem;
+    }
+    .content {
+      width: 400px;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+    .projectLinks {
+      width: 400px;
+  }
+  }
+  @media (max-width: 400px) {
+    .titleContainer {
+      width: 300px;
+      text-align: start;
+    }
+    .langAndTagsContainer {
+      width: 300px;
+    }
+    .language {
+      height: 25px;
+      width: 90px;
+    }
+    .name {
+      margin: 0 0 0 2px;
+      font-size: 1rem;
+    }
+    .tagsContainer {
+      font-size: 1.2rem;
+      padding-right: 0;
+    }
+    .content {
+      width: 300px;
+    }
+    .projectLinks {
+      width: 300px;
   }
 `;
 
@@ -98,7 +180,9 @@ export default function SingleProjectPage({ data }) {
         image={project.desktopImage?.asset?.fluid?.src}
       />
       <ProjectPageStyles>
-        <h1>{project.name}</h1>
+        <div className="titleContainer">
+          <h1>{project.name}</h1>
+        </div>
         <ProjectImageDisplay project={project} />
         <section className="langAndTagsContainer">
           <div className="languagesContainer">
@@ -126,7 +210,7 @@ export default function SingleProjectPage({ data }) {
           <h2>Description</h2>
           <p>{project.description}</p>
         </section>
-        <section className=" content notes">
+        <section className="content notes">
           <h2>Notes</h2>
           <p>{project.notes}</p>
         </section>
