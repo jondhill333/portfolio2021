@@ -7,19 +7,17 @@ import CustomButton from "./customButton";
 const ProjectGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 300px; */
   gap: 2.5rem;
   width: 100%;
   margin: 5vh auto;
+  justify-content: center;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 325px);
   }
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
-  }
-  @media (max-width: 700px) {
-    grid-template-columns: 300px;
+  @media (max-width: 750px) {
+    grid-template-columns: 325px;
+    justify-items: center;
   }
 `;
 
@@ -96,6 +94,10 @@ const SingleProjectStyles = styled.div`
     bottom: 20px;
     left: 32%;
     text-align: center;
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 `;
 

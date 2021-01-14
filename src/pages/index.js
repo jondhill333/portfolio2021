@@ -13,9 +13,12 @@ const HomePageStyles = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
   section {
     display: flex;
     flex-direction: row;
+  }
+  .profilePicture {
   }
 
   img {
@@ -23,6 +26,7 @@ const HomePageStyles = styled.div`
     width: 400px;
     height: 400px;
   }
+
   .about {
     color: var(--white);
     padding: 0 0 0 4vw;
@@ -38,6 +42,36 @@ const HomePageStyles = styled.div`
     width: 100%;
     bottom: 0;
   }
+  @media (max-width: 1000px) {
+    img {
+      width: 300px;
+      height: 300px;
+    }
+    .about {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 650px) {
+    /* justify-content: center; */
+    .profilePicture {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 250px;
+      height: 250px;
+    }
+    section {
+      flex-direction: column;
+    }
+    .about {
+      font-size: 2rem;
+      margin: 30px 0 0 0;
+      padding: 0;
+    }
+  }
 `;
 
 export default function HomePage() {
@@ -46,7 +80,9 @@ export default function HomePage() {
       <SEO title="Home" />
       <HomePageStyles>
         <section>
-          <img src={profilePic} alt="Jon Hill" />
+          <div className="profilePicture">
+            <img src={profilePic} alt="Jon Hill" />
+          </div>
           <div className="about">
             Hi, I&#39;m Jon and I’m a developer based in Crete, Greece. I mainly
             focus on the Front End with an aim to go Full Stack. I want to build
