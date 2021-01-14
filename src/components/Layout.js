@@ -12,6 +12,9 @@ const ContentStyles = styled.div`
   margin: 0 auto;
   height: 100vh;
   position: relative;
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 
 export default function Layout({ children }) {
