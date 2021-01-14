@@ -26,15 +26,31 @@ const BioPageStyles = styled.div`
       color: var(--orange);
     }
   }
-  /* .technicals {
-    line-height: 1.6;
-  } */
   .bioPageFooter {
     position: relative;
     width: 100%;
     margin: 0 auto;
     bottom: 0;
     left: 0;
+  }
+  @media (max-width: 1250px) {
+    width: 90%;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+    section {
+      line-height: 1.3;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin: 2% 0 2% 0%;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    li {
+      font-size: 1.5rem;
+    }
   }
 `;
 
