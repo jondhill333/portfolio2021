@@ -103,6 +103,58 @@ const NavStyles = styled.div`
   [aria-current] {
     color: var(--orange);
   }
+  @media (max-width: 750px) {
+    height: 40px;
+    .logo {
+      font-size: 2.5rem;
+    }
+    .pageLinks {
+      font-size: 1.5rem;
+    }
+    .contactLinks {
+      .gmail {
+        height: 22px;
+        width: 21px;
+      }
+      .github {
+        height: 17px;
+        width: 17px;
+      }
+      .linkedIn {
+        height: 17px;
+        width: 17px;
+      }
+      .twitter {
+      height: 21px;
+      width: 21px;
+    }
+  }
+  @media (max-width: 500px) {
+    height: 40px;
+    .logo {
+      font-size: 1.4rem;
+    }
+    .pageLinks {
+      font-size: 1.1rem;
+    }
+    .contactLinks {
+      .gmail {
+        height: 22px;
+        width: 21px;
+      }
+      .github {
+        height: 17px;
+        width: 17px;
+      }
+      .linkedIn {
+        height: 17px;
+        width: 17px;
+      }
+      .twitter {
+      height: 21px;
+      width: 21px;
+    }
+  }
 `;
 
 export default function Nav() {
