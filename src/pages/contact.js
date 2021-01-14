@@ -6,7 +6,7 @@ import CV from "../assets/Jonathan_Hill_CV_WD.pdf";
 import Footer from "../components/Footer";
 
 const ContactPageStyles = styled.div`
-  width: 60%;
+  width: 80%;
   margin: 1% auto;
   display: flex;
   flex-direction: column;
@@ -38,16 +38,16 @@ export default function ContactPage() {
           <h1 className="pageTitle">Contact</h1>
           <p className="intro">
             I am interested in paid work, volunteer work, open source,
-            contract/freelance or simply connecting for study purposes. Please
-            use the links at the top of the page to get in contact with me. I
-            welcome any opportunity to connnect with like-minded people so we
-            can better ourselves and build a happier future.
+            contract&#47; freelance or simply connecting for study purposes.
+            Please use the links at the top of the page to get in contact with
+            me. I welcome any opportunity to connnect with like-minded people so
+            we can better ourselves and build a happier future.
           </p>
         </section>
         <section>
           <p className="resume">
-            For perspective employers (or if you’re just a curious soul) please
-            find a downloadable version of my current resume/CV{" "}
+            For perspective employers (or if you&#39;re just a curious soul)
+            please find a downloadable version of my current resume/CV{" "}
             <a href={CV} download>
               here
             </a>
