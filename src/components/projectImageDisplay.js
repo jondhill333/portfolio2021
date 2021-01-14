@@ -17,7 +17,7 @@ const ProjectImageDisplayStyles = styled.div`
     align-items: center;
     text-align: center;
     position: absolute;
-    left: 38%;
+    left: 36%;
   }
   a > span {
     background-color: grey;

@@ -92,7 +92,7 @@ const NavStyles = styled.div`
       width: 28px;
       position: relative;
       bottom: 0px;
-      margin: 0px 3px 0px 0px;
+      margin: 0px 4px 0px 0px;
       filter: invert(1);
     }
 
@@ -125,19 +125,38 @@ const NavStyles = styled.div`
         width: 17px;
       }
       .twitter {
-      height: 21px;
-      width: 21px;
+        height: 21px;
+        width: 21px;
+      }
     }
   }
   @media (max-width: 500px) {
-    height: 40px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30px 30px;
+    gap: 0;
+    height: auto;
+    margin: 5px 0 0 0;
+
     .logo {
-      font-size: 1.4rem;
+      grid-column: 1;
+      font-size: 2.5rem;
+      text-align: end;
+      padding-right: 10px;
+      /* border: solid red 1px; */
+      transform: translateY(5px) rotate(-2deg);
     }
     .pageLinks {
+      grid-row: 2;
+      grid-column: 1 / -1;
       font-size: 1.1rem;
+      /* border: solid red 1px; */
     }
     .contactLinks {
+      grid-column: 2;
+      justify-content: start;
+      padding-left: 10px;
+      /* transform: none; */
+      /* border: solid red 1px */
       .gmail {
         height: 22px;
         width: 21px;
@@ -151,8 +170,9 @@ const NavStyles = styled.div`
         width: 17px;
       }
       .twitter {
-      height: 21px;
-      width: 21px;
+        height: 21px;
+        width: 21px;
+      }
     }
   }
 `;
