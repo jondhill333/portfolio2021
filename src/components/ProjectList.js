@@ -115,7 +115,7 @@ function SingleProject({ project }) {
         </div>
         <div className="hoverOverlay">
           <p className="projectDescription">{project.description}</p>
-          <Link to={`/project/${project.slug.current}`}>
+          <Link to={`/projects/${project.slug.current}`}>
             <h3>Learn More</h3>
           </Link>
         </div>
