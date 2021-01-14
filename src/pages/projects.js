@@ -21,6 +21,17 @@ const ProjectPageStyles = styled.div`
     position: relative;
     bottom: 0;
   }
+  @media (max-width: 1000px) {
+    height: 1300px;
+  }
+  @media (max-width: 750px) {
+    height: 2100px;
+    justify-content: center;
+    h1 {
+      font-size: 3rem;
+      margin: 5% 0 2% 0%;
+    }
+  }
 `;
 
 export default function ProjectsPage({ data }) {

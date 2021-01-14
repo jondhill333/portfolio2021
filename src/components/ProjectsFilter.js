@@ -43,6 +43,27 @@ const ProjectFilterStyles = styled.div`
   [aria-current] {
     background-color: var(--orange);
   }
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 500px) {
+    margin: 0 0;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    width: 100%;
+    h3 {
+      font-size: 1.5rem;
+    }
+    .image {
+      width: 20px;
+      height: 20px;
+      margin: 0 0 0 0.3rem;
+    }
+    .name {
+      font-size: 1.1rem;
+      padding: 0 0 0 0.3rem;
+    }
+  }
 `;
 
 export default function ProjectsFilter() {
