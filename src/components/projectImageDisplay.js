@@ -11,13 +11,16 @@ const ProjectImageDisplayStyles = styled.div`
   .carousel {
     width: 100%;
   }
-
-  .mobileImage {
+  .mobileImageContainer {
+    width: 600px;
+    height: 400px;
     display: flex;
     align-items: center;
-    text-align: center;
-    position: absolute;
-    left: 36%;
+  }
+
+  .mobileImage {
+    left: 33.5%;
+    width: 200px;
   }
   a > span {
     background-color: grey;
@@ -58,12 +61,14 @@ export default function ProjectImageDisplay({ project }) {
               alt={project.name}
             />
           </Carousel.Item>
-          <Carousel.Item className="mobileImageContainer">
-            <Img
-              className="mobileImage"
-              fixed={project.mobileImage.asset.fixed}
-              alt={project.name}
-            />
+          <Carousel.Item>
+            <div className="mobileImageContainer">
+              <Img
+                className="mobileImage"
+                fluid={project.mobileImage.asset.fluid}
+                alt={project.name}
+              />
+            </div>
           </Carousel.Item>
         </Carousel>
       </ProjectImageDisplayStyles>
