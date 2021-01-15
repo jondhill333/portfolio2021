@@ -110,7 +110,6 @@ const ProjectPageStyles = styled.div`
     }
     .langAndTagsContainer {
       width: 400px;
-      /* height: 400px; */
     }
     .language {
       height: 28px;
@@ -140,7 +139,7 @@ const ProjectPageStyles = styled.div`
     }
     .projectLinks {
       width: 400px;
-  }
+    }
   }
   @media (max-width: 400px) {
     .titleContainer {
@@ -167,6 +166,7 @@ const ProjectPageStyles = styled.div`
     }
     .projectLinks {
       width: 300px;
+    }
   }
 `;
 
@@ -287,7 +287,7 @@ export const query = graphql`
       }
       mobileImage {
         asset {
-          fixed(width: 175, height: 400) {
+          fixed(width: 275, height: 400) {
             ...GatsbySanityImageFixed
           }
           fluid(maxWidth: 200) {

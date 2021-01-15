@@ -53,7 +53,6 @@ const HomePageStyles = styled.div`
   }
 
   @media (max-width: 650px) {
-    /* justify-content: center; */
     .profilePicture {
       width: 100%;
       display: flex;

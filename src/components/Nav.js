@@ -22,7 +22,6 @@ const NavStyles = styled.div`
     font-size: 3.2rem;
     padding: 0 0 0 5px;
     transform: translateY(5px);
-    /* color: var(--yellow); */
     transform: translateY(1px) rotate(-2deg);
   }
 
@@ -142,21 +141,17 @@ const NavStyles = styled.div`
       font-size: 2.5rem;
       text-align: end;
       padding-right: 10px;
-      /* border: solid red 1px; */
       transform: translateY(5px) rotate(-2deg);
     }
     .pageLinks {
       grid-row: 2;
       grid-column: 1 / -1;
       font-size: 1.1rem;
-      /* border: solid red 1px; */
     }
     .contactLinks {
       grid-column: 2;
       justify-content: start;
       padding-left: 10px;
-      /* transform: none; */
-      /* border: solid red 1px */
       .gmail {
         height: 22px;
         width: 21px;
