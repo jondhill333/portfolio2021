@@ -5,7 +5,6 @@ dotenv.config({ path: ".env" });
 module.exports = {
   siteMetadata: {
     title: "Jon Hill",
-    // siteUrl: "",
     description: "Jon Hill web developer portfolio site",
     twitter: "@jon_hill33",
   },
