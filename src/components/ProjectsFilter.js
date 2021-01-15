@@ -76,6 +76,9 @@ export default function ProjectsFilter() {
               fluid(maxWidth: 100) {
                 ...GatsbySanityImageFluid
               }
+              fixed(width: 25, height: 25) {
+                ...GatsbySanityImageFixed
+              }
             }
           }
           name
@@ -110,7 +113,7 @@ export default function ProjectsFilter() {
               key={language.id}
             >
               <Img
-                fluid={language.image.asset.fluid}
+                fixed={language.image.asset.fixed}
                 alt={language.name}
                 className="image"
               />
