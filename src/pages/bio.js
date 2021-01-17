@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SEO from "../components/SEO";
 import CV from "../assets/Jonathan_Hill_CV_WD.pdf";
 
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const BioPageStyles = styled.div`
   width: 80%;

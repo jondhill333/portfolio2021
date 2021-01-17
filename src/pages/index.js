@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 import profilePic from "../assets/portfolioPic.png";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const HomePageStyles = styled.div`
   width: 100%;

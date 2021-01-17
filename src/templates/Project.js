@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import SEO from "../components/SEO";
 import ProjectImageDisplay from "../components/projectImageDisplay";
+import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
   display: flex;

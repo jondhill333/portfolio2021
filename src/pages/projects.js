@@ -6,7 +6,7 @@ import ProjectList from "../components/ProjectList";
 import ProjectsFilter from "../components/ProjectsFilter";
 import SEO from "../components/SEO";
 
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
   color: var(--white);
