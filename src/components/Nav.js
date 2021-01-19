@@ -50,7 +50,7 @@ const NavStyles = styled.div`
     padding-top: 0;
 
     .socialLink {
-      margin: 0px 4px 0px 5px;
+      margin: 0px 8px 0px 8px;
       transition: all ease-in-out 0.2s;
     }
 
@@ -108,7 +108,7 @@ const NavStyles = styled.div`
       font-size: 2.5rem;
     }
     .pageLinks {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     .contactLinks {
       .gmail {
@@ -131,42 +131,41 @@ const NavStyles = styled.div`
   }
   @media (max-width: 500px) {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 30px 30px;
+    grid-template-rows: 35px 35px;
     gap: 0;
     height: auto;
     margin: 5px 0 0 0;
 
     .logo {
       grid-column: 1;
-      font-size: 2.5rem;
-      text-align: end;
-      padding-right: 10px;
+      font-size: 2.9rem;
+      padding-left: 25px;
       transform: translateY(5px) rotate(-2deg);
     }
     .pageLinks {
       grid-row: 2;
       grid-column: 1 / -1;
-      font-size: 1.1rem;
+      font-size: 1.6rem;
     }
     .contactLinks {
       grid-column: 2;
       justify-content: start;
-      padding-left: 10px;
+      padding-left: 5px;
       .gmail {
-        height: 22px;
-        width: 21px;
+        height: 25px;
+        width: 23px;
       }
       .github {
-        height: 17px;
-        width: 17px;
+        height: 20px;
+        width: 20px;
       }
       .linkedIn {
-        height: 17px;
-        width: 17px;
+        height: 20px;
+        width: 20px;
       }
       .twitter {
-        height: 21px;
-        width: 21px;
+        height: 24px;
+        width: 24px;
       }
     }
   }
