@@ -25,6 +25,10 @@ const ProjectPageStyles = styled.div`
   h2 {
     font-size: 3rem;
   }
+  .projectPageFooter {
+    position: relative;
+    bottom: 0;
+  }
 
   .langAndTagsContainer {
     width: 600px;
@@ -225,6 +229,9 @@ export default function SingleProjectPage({ data }) {
           </a>
         </section>
       </ProjectPageStyles>
+      <div className="projectPageFooter">
+        <Footer />
+      </div>
     </>
   );
 }

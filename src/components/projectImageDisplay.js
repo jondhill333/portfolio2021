@@ -32,7 +32,7 @@ const ProjectImageDisplayStyles = styled.div`
     width: 400px;
     height: 400px;
     .mobileImage {
-      left: 29%;
+      left: 8%;
     }
   }
   @media (max-width: 400px) {
