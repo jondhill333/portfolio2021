@@ -1,4 +1,4 @@
-# My POrtfolio Site - Overview
+# My Portfolio Site - Overview
 
 This is my first portfolio site to showcase my skills and experience
 
