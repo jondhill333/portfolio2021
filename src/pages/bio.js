@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 const BioPageStyles = styled.div`
   width: 80%;
-  height: 1000px;
+  height: 1100px;
   margin: 1% auto;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,10 @@ export default function ContactPage() {
             <li>
               Confident with React, Javascript, CSS, HTML, Styled Components
             </li>
-            <li>Experienced with Next.js, Gatsby, TDD and TypeScript </li>
+            <li>Experienced with Next.js, Gatsby and SASS </li>
+            <li>
+              I'm getting better at Typescript, Test Driven Development and Node
+            </li>
           </ul>
         </section>
         <section className="values">
