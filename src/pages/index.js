@@ -37,6 +37,7 @@ const HomePageStyles = styled.div`
     font-family: "Kalam";
     display: flex;
     align-items: center;
+    letter-spacing: ;
   }
   .indexPageFooter {
     position: absolute;
@@ -92,10 +93,11 @@ export default function HomePage({ data }) {
             />
           </div>
           <div className="about">
-            Hi, I&#39;m Jon and I’m a developer based in Crete, Greece. I mainly
-            focus on the Front End with an aim to go Full Stack. I want to build
-            simple, performant and great looking products. I like panda&#39;s,
-            red wine and mountains &#46;&#46;&#46; amongst others things.
+            Hi, I&#39;m Jon and I’m a developer currently based in Crete,
+            Greece. I mainly focus on the front end with an plan to go full
+            stack in the future. I aim to build performant and great-looking
+            products with clean and maintainable code. I like panda&#39;s, red
+            wine and mountains &#46;&#46;&#46; amongst others things.
           </div>
         </section>
         <div className="indexPageFooter">
