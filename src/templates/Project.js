@@ -178,6 +178,12 @@ const ProjectPageStyles = styled.div`
 export default function SingleProjectPage({ data }) {
   const { project } = data;
 
+  console.log(project);
+
+  // const splitPorjectNotes = project.notes.split(".....");
+
+  // console.log(splitPorjectNotes);
+
   return (
     <>
       <SEO
@@ -188,8 +194,8 @@ export default function SingleProjectPage({ data }) {
         <div className="titleContainer">
           <h1>{project.name}</h1>
         </div>
-        <ProjectImageDisplay project={project} />
-        <section className="langAndTagsContainer">
+        {/* <ProjectImageDisplay project={project} /> */}
+        {/* <section className="langAndTagsContainer">
           <div className="languagesContainer">
             {project.languages.map((language) => (
               <div className="language" key={language.id}>
@@ -210,14 +216,22 @@ export default function SingleProjectPage({ data }) {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
         <section className="content description">
           <h2>Description</h2>
-          <p>{project.description}</p>
+          <p>{project.introduction}</p>
         </section>
         <section className="content notes">
           <h2>Notes</h2>
-          <p>{project.notes}</p>
+          <p>{project.purpose}</p>
+        </section>
+        <section className="content notes">
+          <h2>Notes</h2>
+          <p>{project.spotlight}</p>
+        </section>
+        <section className="content notes">
+          <h2>Notes</h2>
+          <p>{project.lessons}</p>
         </section>
         <section className="projectLinks">
           <a href={project.githubLink} target="_blank" rel="noreferrer">
@@ -240,15 +254,18 @@ export const query = graphql`
   query($slug: String!) {
     project: sanityProjects(slug: { current: { eq: $slug } }) {
       name
-      description
+      introduction
+      purpose
+      spotlight
+      lessons
       githubLink
       id
-      notes
-      tags {
-        name
-        id
+      projectType
+      slug {
+        current
       }
-      languages {
+      url
+      techStack {
         id
         name
         image {
@@ -259,10 +276,7 @@ export const query = graphql`
           }
         }
       }
-      slug {
-        current
-      }
-      url
+
       desktopImage {
         asset {
           fixed(width: 600, height: 400) {

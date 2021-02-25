@@ -67,39 +67,39 @@ const ProjectFilterStyles = styled.div`
 `;
 
 export default function ProjectsFilter() {
-  const { languages, projects } = useStaticQuery(graphql`
-    query {
-      languages: allSanityLanguage {
-        nodes {
-          image {
-            asset {
-              fluid(maxWidth: 100) {
-                ...GatsbySanityImageFluid
-              }
-              fixed(width: 25, height: 25) {
-                ...GatsbySanityImageFixed
-              }
-            }
-          }
-          name
-          id
-        }
-      }
-      projects: allSanityProjects {
-        nodes {
-          languages {
-            name
-            id
-          }
-        }
-      }
-    }
-  `);
+  // const { languages, projects } = useStaticQuery(graphql`
+  //   query {
+  //     languages: allSanityLanguage {
+  //       nodes {
+  //         image {
+  //           asset {
+  //             fluid(maxWidth: 100) {
+  //               ...GatsbySanityImageFluid
+  //             }
+  //             fixed(width: 25, height: 25) {
+  //               ...GatsbySanityImageFixed
+  //             }
+  //           }
+  //         }
+  //         name
+  //         id
+  //       }
+  //     }
+  //     projects: allSanityProjects {
+  //       nodes {
+  //         languages {
+  //           name
+  //           id
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <>
       <ProjectFilterStyles>
-        <h3>Click on a button to filter the grid!</h3>
+        {/* <h3>Click on a button to filter the grid!</h3>
         <CustomButton>
           <Link to="/projects" className="language">
             <div className="name">All</div>
@@ -120,7 +120,7 @@ export default function ProjectsFilter() {
               <div className="name">{language.name}</div>
             </Link>
           </CustomButton>
-        ))}
+        ))} */}
       </ProjectFilterStyles>
     </>
   );

@@ -55,21 +55,16 @@ export default function ProjectsPage({ data }) {
 }
 
 export const query = graphql`
-  query ProjectsQuery($languageRegex: String) {
-    projects: allSanityProjects(
-      filter: { languages: { elemMatch: { name: { regex: $languageRegex } } } }
-    ) {
+  query ProjectsQuery {
+    projects: allSanityProjects {
       nodes {
         name
-        description
+        introduction
         githubLink
-        notes
+        purpose
         date
-        tags {
-          name
-          id
-        }
-        languages {
+        spotlight
+        techStack {
           id
           name
           image {
