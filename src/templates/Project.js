@@ -10,80 +10,46 @@ const ProjectPageStyles = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 60%;
+  width: 100%;
   color: var(--white);
   position: relative;
   font-family: "IBM Plex Mono";
-  align-items: center;
-  .titleContainer {
-    width: 600px;
-    text-align: start;
-  }
+  /* align-items: center; */
+
   section {
-    margin: 2vh 0 2vh 0;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  .projectPageFooter {
-    position: relative;
-    bottom: 0;
+    margin: 40px 0;
   }
 
-  .langAndTagsContainer {
-    width: 600px;
-    height: auto;
+  .titleContainer {
+    h1 {
+      margin: 0;
+    }
+  }
+  .introduction {
+    width: 80%;
+    font-size: 1.8rem;
+  }
+  .particularsContainer {
+    width: 80%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 30% 70%;
+    /* align-items: center;*/
+    height: 200px;
   }
 
-  .languagesContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px;
-    gap: 10px;
-    padding-left: 10px;
-    margin: 2vh 0 2vh 0;
-  }
-  .language {
-    display: flex;
-    flex-direction: row;
-    height: 38px;
-    background-color: var(--white);
-    width: 120px;
-    align-items: center;
-    border: 1px solid var(--orange);
-    border-radius: 3px;
-    line-height: 1.1;
+  .particularsHeader {
   }
 
-  .image {
-    width: 25px;
-    height: 25px;
-    margin: 0 0 0 3px;
-    padding: 2px 0;
-  }
-  .name {
-    color: black;
-    margin: 0 0 0 4px;
-    font-size: 1.4rem;
+  .particularsItem {
   }
 
-  .tagsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 1.5rem;
-    justify-items: right;
-    padding-right: 10px;
+  .imageContainer .hero {
+    width: 100%;
+    height: 600px;
   }
-  .content {
-    width: 600px;
-    text-align: start;
-  }
-  .description {
-  }
-  .notes {
+  .imageOne {
+    border-radius: 10px;
   }
   .projectLinks {
     width: 600px;
@@ -177,12 +143,7 @@ const ProjectPageStyles = styled.div`
 
 export default function SingleProjectPage({ data }) {
   const { project } = data;
-
   console.log(project);
-
-  // const splitPorjectNotes = project.notes.split(".....");
-
-  // console.log(splitPorjectNotes);
 
   return (
     <>
@@ -191,11 +152,68 @@ export default function SingleProjectPage({ data }) {
         image={project.desktopImage?.asset?.fluid?.src}
       />
       <ProjectPageStyles>
-        <div className="titleContainer">
+        <section className="titleContainer">
           <h1>{project.name}</h1>
+        </section>
+        <section className="introduction">
+          <h2>Introduction</h2>
+          <p>{project.introduction}</p>
+        </section>
+        <section className="particularsContainer">
+          <div className="particularsHeader">Type</div>
+          <div className="particularsHeader">Stack</div>
+          <div className="particularsHeader">Code</div>
+          <div className="particularsHeader">Site</div>
+          <div className="particularsItem">{project.projectType}</div>
+          <div className="particularsItem">
+            {project.techStack.map((tech) => (
+              <div>{tech.name}</div>
+            ))}
+          </div>
+          <div className="particularsItem">
+            <a href={project.githubLink}>Repository</a>
+          </div>
+          <div className="particularsItem">
+            <a href={project.url}>View Site</a>
+          </div>
+        </section>
+        <div className="imageContainer hero">
+          <Img className="imageOne" fluid={project.desktopImage.asset.fluid} />
         </div>
-        {/* <ProjectImageDisplay project={project} /> */}
-        {/* <section className="langAndTagsContainer">
+        <section className="purpose">
+          <h2>Purpose and Goals</h2>
+          <p>{project.purpose}</p>
+        </section>
+        <section className="spotlight">
+          <h2>Spotlight</h2>
+          <p>{project.spotlight}</p>
+        </section>
+        <section className="lessons">
+          <h2>Lessons Learned</h2>
+          <p>{project.lessons}</p>
+        </section>
+        <section className="projectLinks">
+          <a href={project.githubLink} target="_blank" rel="noreferrer">
+            Github Repo
+          </a>
+          <br />
+          <a href={project.url} target="_blank" rel="noreferrer">
+            Live Site
+          </a>
+        </section>
+      </ProjectPageStyles>
+      <div className="projectPageFooter">
+        <Footer />
+      </div>
+    </>
+  );
+}
+
+{
+  /* <ProjectImageDisplay project={project} /> */
+}
+{
+  /* <section className="langAndTagsContainer">
           <div className="languagesContainer">
             {project.languages.map((language) => (
               <div className="language" key={language.id}>
@@ -216,38 +234,7 @@ export default function SingleProjectPage({ data }) {
               </div>
             ))}
           </div>
-        </section> */}
-        <section className="content description">
-          <h2>Description</h2>
-          <p>{project.introduction}</p>
-        </section>
-        <section className="content notes">
-          <h2>Notes</h2>
-          <p>{project.purpose}</p>
-        </section>
-        <section className="content notes">
-          <h2>Notes</h2>
-          <p>{project.spotlight}</p>
-        </section>
-        <section className="content notes">
-          <h2>Notes</h2>
-          <p>{project.lessons}</p>
-        </section>
-        <section className="projectLinks">
-          <a href={project.githubLink} target="_blank" rel="noreferrer">
-            Github Repo
-          </a>
-          <br />
-          <a href={project.url} target="_blank" rel="noreferrer">
-            Live Site
-          </a>
-        </section>
-      </ProjectPageStyles>
-      <div className="projectPageFooter">
-        <Footer />
-      </div>
-    </>
-  );
+        </section> */
 }
 
 export const query = graphql`
@@ -282,7 +269,7 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 440) {
             ...GatsbySanityImageFluid
           }
         }
@@ -292,7 +279,7 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 1000) {
             ...GatsbySanityImageFluid
           }
         }
