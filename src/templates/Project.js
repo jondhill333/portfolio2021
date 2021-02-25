@@ -36,6 +36,7 @@ const ProjectPageStyles = styled.div`
     grid-template-rows: 30% 70%;
     /* align-items: center;*/
     height: 200px;
+    font-size: 1.8rem;
   }
 
   .particularsHeader {
@@ -48,23 +49,58 @@ const ProjectPageStyles = styled.div`
     width: 100%;
     height: 600px;
   }
-  .imageOne {
+  .image {
     border-radius: 10px;
   }
-  .projectLinks {
-    width: 600px;
-    margin: 2vh 0 2vh 0;
+  .purpose {
+    width: 60%;
+  }
+
+  .spotlight {
+    width: 60%;
+    position: relative;
+    left: 40%;
+  }
+  .lowerImageContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
-  a {
-    color: var(--white);
+  .imageTwo {
+    width: 45%;
+    height: 400px;
+  }
+
+  .imageThree {
+    width: 45%;
+    height: 400px;
+  }
+  .lessons {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  .link {
     cursor: pointer;
-    &:hover {
-      color: var(--orange);
-    }
+    color: var(--orange);
+    display: inline-block;
+    text-decoration: none;
   }
+
+  .link::after {
+    /* display: inline-block; */
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s;
+  }
+  .link:hover:after {
+    width: 100%;
+  }
+
   @media (max-width: 1250px) {
     width: 80%;
   }
@@ -171,14 +207,21 @@ export default function SingleProjectPage({ data }) {
             ))}
           </div>
           <div className="particularsItem">
-            <a href={project.githubLink}>Repository</a>
+            <a className="link" href={project.githubLink}>
+              Repository
+            </a>
           </div>
           <div className="particularsItem">
-            <a href={project.url}>View Site</a>
+            <a className="link" href={project.url}>
+              View Site
+            </a>
           </div>
         </section>
         <div className="imageContainer hero">
-          <Img className="imageOne" fluid={project.desktopImage.asset.fluid} />
+          <Img
+            className="image imageOne"
+            fluid={project.desktopImage.asset.fluid}
+          />
         </div>
         <section className="purpose">
           <h2>Purpose and Goals</h2>
@@ -188,18 +231,22 @@ export default function SingleProjectPage({ data }) {
           <h2>Spotlight</h2>
           <p>{project.spotlight}</p>
         </section>
+        <div>
+          <div className="lowerImageContainer">
+            <Img
+              className="image imageTwo"
+              fluid={project.desktopImageTwo.asset.fluid}
+            />
+
+            <Img
+              className="image imageThree"
+              fluid={project.desktopImageThree.asset.fluid}
+            />
+          </div>
+        </div>
         <section className="lessons">
           <h2>Lessons Learned</h2>
           <p>{project.lessons}</p>
-        </section>
-        <section className="projectLinks">
-          <a href={project.githubLink} target="_blank" rel="noreferrer">
-            Github Repo
-          </a>
-          <br />
-          <a href={project.url} target="_blank" rel="noreferrer">
-            Live Site
-          </a>
         </section>
       </ProjectPageStyles>
       <div className="projectPageFooter">
@@ -207,34 +254,6 @@ export default function SingleProjectPage({ data }) {
       </div>
     </>
   );
-}
-
-{
-  /* <ProjectImageDisplay project={project} /> */
-}
-{
-  /* <section className="langAndTagsContainer">
-          <div className="languagesContainer">
-            {project.languages.map((language) => (
-              <div className="language" key={language.id}>
-                <Img
-                  fluid={language.image.asset.fluid}
-                  alt={language.name}
-                  className="image"
-                />
-                <div className="name">{language.name}</div>
-              </div>
-            ))}
-          </div>
-          <div className="tagsContainer">
-            {project.tags.map((tag) => (
-              <div className="tag" key={tag.id}>
-                <span className="hashtag">#</span>
-                <span className="tagName">{tag.name}</span>
-              </div>
-            ))}
-          </div>
-        </section> */
 }
 
 export const query = graphql`
@@ -279,7 +298,7 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 1000) {
+          fluid(maxHeight: 480) {
             ...GatsbySanityImageFluid
           }
         }
@@ -289,7 +308,7 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 480) {
             ...GatsbySanityImageFluid
           }
         }
