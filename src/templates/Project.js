@@ -14,7 +14,6 @@ const ProjectPageStyles = styled.div`
   color: var(--white);
   position: relative;
   font-family: "IBM Plex Mono";
-  /* align-items: center; */
 
   section {
     margin: 40px 0;
@@ -25,6 +24,9 @@ const ProjectPageStyles = styled.div`
       margin: 0;
     }
   }
+  h2 {
+    font-size: 3.2rem;
+  }
   .introduction {
     width: 80%;
     font-size: 1.8rem;
@@ -33,21 +35,26 @@ const ProjectPageStyles = styled.div`
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 30% 70%;
-    /* align-items: center;*/
-    height: 200px;
-    font-size: 1.8rem;
+    grid-template-rows: 25% 75%;
+    height: 180px;
+  }
+  .particularsHeaderContainer {
+    width: 100%;
   }
 
   .particularsHeader {
+    width: fit-content;
+    border-bottom: 2px var(--white) solid;
+    font-size: 1.8rem;
   }
 
   .particularsItem {
+    font-size: 1.6rem;
   }
 
   .imageContainer .hero {
     width: 100%;
-    height: 600px;
+    height: 700px;
   }
   .image {
     border-radius: 10px;
@@ -65,10 +72,13 @@ const ProjectPageStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  .imageTwo {
-    width: 45%;
     height: 400px;
+    /* height: 800px; */
+  }
+  .mobileImage {
+    width: 45%;
+    height: 600px;
+    transform: translateY(-200px);
   }
 
   .imageThree {
@@ -89,7 +99,6 @@ const ProjectPageStyles = styled.div`
   }
 
   .link::after {
-    /* display: inline-block; */
     content: "";
     display: block;
     width: 0%;
@@ -196,10 +205,18 @@ export default function SingleProjectPage({ data }) {
           <p>{project.introduction}</p>
         </section>
         <section className="particularsContainer">
-          <div className="particularsHeader">Type</div>
-          <div className="particularsHeader">Stack</div>
-          <div className="particularsHeader">Code</div>
-          <div className="particularsHeader">Site</div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">TYPE</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">STACK</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">CODE</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">SITE</div>
+          </div>
           <div className="particularsItem">{project.projectType}</div>
           <div className="particularsItem">
             {project.techStack.map((tech) => (
@@ -231,19 +248,18 @@ export default function SingleProjectPage({ data }) {
           <h2>Spotlight</h2>
           <p>{project.spotlight}</p>
         </section>
-        <div>
-          <div className="lowerImageContainer">
-            <Img
-              className="image imageTwo"
-              fluid={project.desktopImageTwo.asset.fluid}
-            />
-
-            <Img
-              className="image imageThree"
-              fluid={project.desktopImageThree.asset.fluid}
-            />
-          </div>
+        {/* <div> */}
+        <div className="lowerImageContainer">
+          <Img
+            className="image mobileImage"
+            fixed={project.mobileImage.asset.fixed}
+          />
+          <Img
+            className="image imageThree"
+            fluid={project.desktopImageTwo.asset.fluid}
+          />
         </div>
+        {/* </div> */}
         <section className="lessons">
           <h2>Lessons Learned</h2>
           <p>{project.lessons}</p>
@@ -315,10 +331,10 @@ export const query = graphql`
       }
       mobileImage {
         asset {
-          fixed(width: 275, height: 400) {
+          fixed(width: 275, height: 600) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxWidth: 200) {
+          fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
         }
