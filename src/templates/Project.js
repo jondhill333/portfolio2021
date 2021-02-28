@@ -20,6 +20,7 @@ const ProjectPageStyles = styled.div`
   }
 
   .titleContainer {
+    margin: 30px 0 0 0;
     h1 {
       margin: 0;
     }
@@ -82,7 +83,7 @@ const ProjectPageStyles = styled.div`
   }
 
   .imageThree {
-    width: 45%;
+    width: 60%;
     height: 400px;
   }
   .lessons {
