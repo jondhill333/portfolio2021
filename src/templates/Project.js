@@ -10,95 +10,106 @@ const ProjectPageStyles = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 60%;
+  width: 100%;
   color: var(--white);
   position: relative;
   font-family: "IBM Plex Mono";
-  align-items: center;
-  .titleContainer {
-    width: 600px;
-    text-align: start;
-  }
+
   section {
-    margin: 2vh 0 2vh 0;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  .projectPageFooter {
-    position: relative;
-    bottom: 0;
+    margin: 40px 0;
   }
 
-  .langAndTagsContainer {
-    width: 600px;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-  }
-
-  .languagesContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px;
-    gap: 10px;
-    padding-left: 10px;
-    margin: 2vh 0 2vh 0;
-  }
-  .language {
-    display: flex;
-    flex-direction: row;
-    height: 38px;
-    background-color: var(--white);
-    width: 120px;
-    align-items: center;
-    border: 1px solid var(--orange);
-    border-radius: 3px;
-    line-height: 1.1;
-  }
-
-  .image {
-    width: 25px;
-    height: 25px;
-    margin: 0 0 0 3px;
-    padding: 2px 0;
-  }
-  .name {
-    color: black;
-    margin: 0 0 0 4px;
-    font-size: 1.4rem;
-  }
-
-  .tagsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 1.5rem;
-    justify-items: right;
-    padding-right: 10px;
-  }
-  .content {
-    width: 600px;
-    text-align: start;
-  }
-  .description {
-  }
-  .notes {
-  }
-  .projectLinks {
-    width: 600px;
-    margin: 2vh 0 2vh 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  a {
-    color: var(--white);
-    cursor: pointer;
-    &:hover {
-      color: var(--orange);
+  .titleContainer {
+    h1 {
+      margin: 0;
     }
   }
+  h2 {
+    font-size: 3.2rem;
+  }
+  .introduction {
+    width: 80%;
+    font-size: 1.8rem;
+  }
+  .particularsContainer {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 25% 75%;
+    height: 180px;
+  }
+  .particularsHeaderContainer {
+    width: 100%;
+  }
+
+  .particularsHeader {
+    width: fit-content;
+    border-bottom: 2px var(--white) solid;
+    font-size: 1.8rem;
+  }
+
+  .particularsItem {
+    font-size: 1.6rem;
+  }
+
+  .imageContainer .hero {
+    width: 100%;
+    height: 700px;
+  }
+  .image {
+    border-radius: 10px;
+  }
+  .purpose {
+    width: 60%;
+  }
+
+  .spotlight {
+    width: 60%;
+    position: relative;
+    left: 40%;
+  }
+  .lowerImageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 400px;
+    /* height: 800px; */
+  }
+  .mobileImage {
+    width: 45%;
+    height: 600px;
+    transform: translateY(-200px);
+  }
+
+  .imageThree {
+    width: 45%;
+    height: 400px;
+  }
+  .lessons {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  .link {
+    cursor: pointer;
+    color: var(--orange);
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .link::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s;
+  }
+  .link:hover:after {
+    width: 100%;
+  }
+
   @media (max-width: 1250px) {
     width: 80%;
   }
@@ -177,6 +188,7 @@ const ProjectPageStyles = styled.div`
 
 export default function SingleProjectPage({ data }) {
   const { project } = data;
+  console.log(project);
 
   return (
     <>
@@ -185,48 +197,72 @@ export default function SingleProjectPage({ data }) {
         image={project.desktopImage?.asset?.fluid?.src}
       />
       <ProjectPageStyles>
-        <div className="titleContainer">
+        <section className="titleContainer">
           <h1>{project.name}</h1>
+        </section>
+        <section className="introduction">
+          <h2>Introduction</h2>
+          <p>{project.introduction}</p>
+        </section>
+        <section className="particularsContainer">
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">TYPE</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">STACK</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">CODE</div>
+          </div>
+          <div className="particularsHeaderContainer">
+            <div className="particularsHeader">SITE</div>
+          </div>
+          <div className="particularsItem">{project.projectType}</div>
+          <div className="particularsItem">
+            {project.techStack.map((tech) => (
+              <div>{tech.name}</div>
+            ))}
+          </div>
+          <div className="particularsItem">
+            <a className="link" href={project.githubLink}>
+              Repository
+            </a>
+          </div>
+          <div className="particularsItem">
+            <a className="link" href={project.url}>
+              View Site
+            </a>
+          </div>
+        </section>
+        <div className="imageContainer hero">
+          <Img
+            className="image imageOne"
+            fluid={project.desktopImage.asset.fluid}
+          />
         </div>
-        <ProjectImageDisplay project={project} />
-        <section className="langAndTagsContainer">
-          <div className="languagesContainer">
-            {project.languages.map((language) => (
-              <div className="language" key={language.id}>
-                <Img
-                  fluid={language.image.asset.fluid}
-                  alt={language.name}
-                  className="image"
-                />
-                <div className="name">{language.name}</div>
-              </div>
-            ))}
-          </div>
-          <div className="tagsContainer">
-            {project.tags.map((tag) => (
-              <div className="tag" key={tag.id}>
-                <span className="hashtag">#</span>
-                <span className="tagName">{tag.name}</span>
-              </div>
-            ))}
-          </div>
+        <section className="purpose">
+          <h2>Purpose and Goals</h2>
+          <p>{project.purpose}</p>
         </section>
-        <section className="content description">
-          <h2>Description</h2>
-          <p>{project.description}</p>
+        <section className="spotlight">
+          <h2>Spotlight</h2>
+          <p>{project.spotlight}</p>
         </section>
-        <section className="content notes">
-          <h2>Notes</h2>
-          <p>{project.notes}</p>
-        </section>
-        <section className="projectLinks">
-          <a href={project.githubLink} target="_blank" rel="noreferrer">
-            Github Repo
-          </a>
-          <br />
-          <a href={project.url} target="_blank" rel="noreferrer">
-            Live Site
-          </a>
+        {/* <div> */}
+        <div className="lowerImageContainer">
+          <Img
+            className="image mobileImage"
+            fixed={project.mobileImage.asset.fixed}
+          />
+          <Img
+            className="image imageThree"
+            fluid={project.desktopImageTwo.asset.fluid}
+          />
+        </div>
+        {/* </div> */}
+        <section className="lessons">
+          <h2>Lessons Learned</h2>
+          <p>{project.lessons}</p>
         </section>
       </ProjectPageStyles>
       <div className="projectPageFooter">
@@ -240,15 +276,18 @@ export const query = graphql`
   query($slug: String!) {
     project: sanityProjects(slug: { current: { eq: $slug } }) {
       name
-      description
+      introduction
+      purpose
+      spotlight
+      lessons
       githubLink
       id
-      notes
-      tags {
-        name
-        id
+      projectType
+      slug {
+        current
       }
-      languages {
+      url
+      techStack {
         id
         name
         image {
@@ -259,16 +298,13 @@ export const query = graphql`
           }
         }
       }
-      slug {
-        current
-      }
-      url
+
       desktopImage {
         asset {
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 440) {
             ...GatsbySanityImageFluid
           }
         }
@@ -278,7 +314,7 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 480) {
             ...GatsbySanityImageFluid
           }
         }
@@ -288,17 +324,17 @@ export const query = graphql`
           fixed(width: 600, height: 400) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 480) {
             ...GatsbySanityImageFluid
           }
         }
       }
       mobileImage {
         asset {
-          fixed(width: 275, height: 400) {
+          fixed(width: 275, height: 600) {
             ...GatsbySanityImageFixed
           }
-          fluid(maxWidth: 200) {
+          fluid(maxWidth: 800) {
             ...GatsbySanityImageFluid
           }
         }
