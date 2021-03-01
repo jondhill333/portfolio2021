@@ -10,11 +10,11 @@ import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
   color: var(--white);
-  height: 1000px;
+  height: 1350px;
   position: relative;
   h1 {
     font-family: "Kalam";
-    margin: 2% 0 1% 10%;
+    margin: 5% 0 0% 0%;
     padding: 0;
   }
   .projectsPageFooter {
@@ -22,29 +22,25 @@ const ProjectPageStyles = styled.div`
     bottom: 0;
   }
   @media (max-width: 1000px) {
-    height: 1300px;
+    height: 2000px;
   }
   @media (max-width: 750px) {
-    height: 2100px;
-    justify-content: center;
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 5% 0 2% 0%;
     }
   }
 `;
 
 export default function ProjectsPage({ data }) {
-  const projects = data.projects.nodes.sort(
-    (a, b) => Date.parse(b.date) - Date.parse(a.date)
-  );
-
+  const projects = data.projects.nodes
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+    .slice(0, 3);
   return (
     <>
       <SEO title="Projects" />
       <ProjectPageStyles>
         <h1>Projects</h1>
-        <ProjectsFilter />
         <ProjectList projects={projects} />
       </ProjectPageStyles>
       <div className="projectsPageFooter">
@@ -55,21 +51,17 @@ export default function ProjectsPage({ data }) {
 }
 
 export const query = graphql`
-  query ProjectsQuery($languageRegex: String) {
-    projects: allSanityProjects(
-      filter: { languages: { elemMatch: { name: { regex: $languageRegex } } } }
-    ) {
+  query ProjectsQuery {
+    projects: allSanityProjects {
       nodes {
         name
         description
+        introduction
         githubLink
-        notes
+        purpose
         date
-        tags {
-          name
-          id
-        }
-        languages {
+        spotlight
+        techStack {
           id
           name
           image {
@@ -87,7 +79,7 @@ export const query = graphql`
         url
         desktopImage {
           asset {
-            fixed(width: 325, height: 220) {
+            fixed(width: 480, height: 320) {
               ...GatsbySanityImageFixed
             }
             fluid(maxWidth: 600) {
