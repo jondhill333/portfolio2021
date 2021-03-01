@@ -93,11 +93,11 @@ export default function HomePage({ data }) {
             />
           </div>
           <div className="about">
-            Hi, I&#39;m Jon and I’m a developer currently based in Crete,
-            Greece. I mainly focus on the front end with a plan to go full stack
-            in the future. I aim to build performant and great-looking products
-            with clean and maintainable code. I like panda&#39;s, red wine and
-            mountains &#46;&#46;&#46; amongst others things.
+            Hi, I&#39;m Jon and I’m a developer from the UK. I mainly focus on
+            the front end with a plan to go full stack in the future. I aim to
+            build performant and great-looking products with clean and
+            maintainable code. I like panda&#39;s, red wine and mountains
+            &#46;&#46;&#46; amongst others things.
           </div>
         </section>
         <div className="indexPageFooter">
