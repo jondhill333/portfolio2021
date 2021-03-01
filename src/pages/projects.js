@@ -14,8 +14,11 @@ const ProjectPageStyles = styled.div`
   position: relative;
   h1 {
     font-family: "Kalam";
-    margin: 5% 0 0% 0%;
+    margin: 3% 0 1% 0%;
     padding: 0;
+  }
+  p {
+    font-family: "IBM Plex Mono";
   }
   .projectsPageFooter {
     position: relative;
@@ -41,6 +44,7 @@ export default function ProjectsPage({ data }) {
       <SEO title="Projects" />
       <ProjectPageStyles>
         <h1>Projects</h1>
+        <p>Please see a selection of my most recent work.</p>
         <ProjectList projects={projects} />
       </ProjectPageStyles>
       <div className="projectsPageFooter">
