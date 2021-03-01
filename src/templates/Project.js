@@ -31,14 +31,13 @@ const ProjectPageStyles = styled.div`
     width: 80%;
     font-size: 1.8rem;
   }
-  .particularsContainer {
+  .particularSectionContainer {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 25% 75%;
     height: 180px;
   }
-  .particularsHeaderContainer {
+  .particularsContainer {
     width: 100%;
   }
 
@@ -50,6 +49,7 @@ const ProjectPageStyles = styled.div`
 
   .particularsItem {
     font-size: 1.6rem;
+    padding: 15px 0 0 0;
   }
 
   .imageContainer .hero {
@@ -109,78 +109,75 @@ const ProjectPageStyles = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 1250px) {
-    width: 80%;
-  }
-  @media (max-width: 1000px) {
-    width: 90%;
-  }
-  @media (max-width: 750px) {
-    width: 100%;
-  }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    overflow-x: hidden;
+    align-items: center;
     .titleContainer {
-      width: 400px;
-      text-align: start;
-    }
-    .langAndTagsContainer {
-      width: 400px;
-    }
-    .language {
-      height: 28px;
-      width: 100px;
-    }
-    .tagsContainer {
-      grid-template-columns: 1fr;
-    }
-    .image {
-      width: 20px;
-      height: 20px;
-      margin: 0 0 0 2px;
-      padding: 1px 0;
-    }
-    .name {
-      margin: 0 0 0 2px;
-      font-size: 1.1rem;
-    }
-    .content {
-      width: 400px;
+      margin: 25px 0;
+      h1 {
+        margin: 0;
+        font-size: 2.8rem;
+      }
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
     }
-    p {
-      font-size: 1.4rem;
+    .section {
+      font-size: 1.5rem;
+      text-align: justify;
+      width: 100%;
+      margin: 10px 0;
     }
-    .projectLinks {
-      width: 400px;
+    .particularSectionContainer {
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 15px;
+      margin-bottom: 25px;
     }
-  }
-  @media (max-width: 400px) {
-    .titleContainer {
-      width: 300px;
-      text-align: start;
+    .particularsHeader {
+      font-size: 1.5rem;
     }
-    .langAndTagsContainer {
-      width: 300px;
+    .particularsItem {
+      font-size: 1.3rem;
     }
-    .language {
-      height: 25px;
-      width: 90px;
+
+    .spotlight {
+      position: relative;
+      left: 0%;
     }
-    .name {
-      margin: 0 0 0 2px;
-      font-size: 1rem;
+    .mobileImage {
+      width: 90%;
+      height: 600px;
+      transform: none;
     }
-    .tagsContainer {
-      font-size: 1.2rem;
-      padding-right: 0;
+    .imageContainer {
+      width: 100%;
+      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .content {
-      width: 300px;
+    .imageOne {
+      margin: 0;
     }
-    .projectLinks {
-      width: 300px;
+    .image {
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 2px;
+    }
+    .lowerImageContainer {
+      flex-direction: column;
+      justify-content: center;
+      height: 220px;
+    }
+
+    .mobileImageContainer {
+      display: none;
+    }
+    .imageThree {
+      width: 100%;
+      height: 220px;
     }
   }
 `;
@@ -199,38 +196,38 @@ export default function SingleProjectPage({ data }) {
         <section className="titleContainer">
           <h1>{project.name}</h1>
         </section>
-        <section className="introduction">
+        <section className=" section introduction">
           <h2>Introduction</h2>
           <p>{project.introduction}</p>
         </section>
-        <section className="particularsContainer">
-          <div className="particularsHeaderContainer">
+        <section className="section particularSectionContainer">
+          <div className="particularsContainer">
             <div className="particularsHeader">TYPE</div>
+            <div className="particularsItem">{project.projectType}</div>
           </div>
-          <div className="particularsHeaderContainer">
+          <div className="particularsContainer">
             <div className="particularsHeader">STACK</div>
+            <div className="particularsItem">
+              {project.techStack.map((tech) => (
+                <div>{tech.name}</div>
+              ))}
+            </div>
           </div>
-          <div className="particularsHeaderContainer">
+          <div className="particularsContainer">
             <div className="particularsHeader">CODE</div>
+            <div className="particularsItem">
+              <a className="link" href={project.githubLink}>
+                Repository
+              </a>
+            </div>
           </div>
-          <div className="particularsHeaderContainer">
+          <div className="particularsContainer">
             <div className="particularsHeader">SITE</div>
-          </div>
-          <div className="particularsItem">{project.projectType}</div>
-          <div className="particularsItem">
-            {project.techStack.map((tech) => (
-              <div>{tech.name}</div>
-            ))}
-          </div>
-          <div className="particularsItem">
-            <a className="link" href={project.githubLink}>
-              Repository
-            </a>
-          </div>
-          <div className="particularsItem">
-            <a className="link" href={project.url}>
-              View Site
-            </a>
+            <div className="particularsItem">
+              <a className="link" href={project.url}>
+                View Site
+              </a>
+            </div>
           </div>
         </section>
         <div className="imageContainer hero">
@@ -239,27 +236,28 @@ export default function SingleProjectPage({ data }) {
             fluid={project.desktopImage.asset.fluid}
           />
         </div>
-        <section className="purpose">
+        <section className="section purpose">
           <h2>Purpose and Goals</h2>
           <p>{project.purpose}</p>
         </section>
-        <section className="spotlight">
+        <section className="section spotlight">
           <h2>Spotlight</h2>
           <p>{project.spotlight}</p>
         </section>
         {/* <div> */}
-        <div className="lowerImageContainer">
-          <Img
-            className="image mobileImage"
-            fixed={project.mobileImage.asset.fixed}
-          />
+        <div className="section lowerImageContainer">
+          <div className="mobileImageContainer">
+            <Img
+              className="image mobileImage"
+              fixed={project.mobileImage.asset.fixed}
+            />
+          </div>
           <Img
             className="image imageThree"
             fluid={project.desktopImageTwo.asset.fluid}
           />
         </div>
-        {/* </div> */}
-        <section className="lessons">
+        <section className=" section lessons">
           <h2>Lessons Learned</h2>
           <p>{project.lessons}</p>
         </section>
