@@ -1,9 +1,8 @@
-import { graphql, Link } from "gatsby";
-import React, { useState } from "react";
+import { graphql } from "gatsby";
+import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import SEO from "../components/SEO";
-import ProjectImageDisplay from "../components/projectImageDisplay";
 import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
@@ -74,7 +73,6 @@ const ProjectPageStyles = styled.div`
     flex-direction: row;
     justify-content: space-between;
     height: 400px;
-    /* height: 800px; */
   }
   .mobileImage {
     width: 45%;

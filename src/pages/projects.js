@@ -43,7 +43,6 @@ export default function ProjectsPage({ data }) {
       <SEO title="Projects" />
       <ProjectPageStyles>
         <h1>Projects</h1>
-        {/* <ProjectsFilter /> */}
         <ProjectList projects={projects} />
       </ProjectPageStyles>
       <div className="projectsPageFooter">

@@ -36,7 +36,6 @@ const SingleProjectStyles = styled.div`
 
   .image {
     border-radius: 10px;
-    /* opacity: 0.8; */
     transition: all 0.3s ease-in-out;
   }
 
@@ -59,7 +58,6 @@ const SingleProjectStyles = styled.div`
     text-decoration: none;
     width: fit-content;
     font-family: "IBM Plex Mono";
-    /* height: 10px; */
   }
 
   .projectPageLink::after {
@@ -84,7 +82,6 @@ function SingleProject({ project }) {
   return (
     <>
       <SingleProjectStyles>
-        {/* <div className="imageAndTitleDisplay"> */}
         <Link className="link" href={`/projects/${project.slug.current}`}>
           <Img
             fixed={project.desktopImage.asset.fixed}
@@ -92,19 +89,15 @@ function SingleProject({ project }) {
             className=" item image"
           />
           <h3 className="item title">{project.name}</h3>
-          {/* </div> */}
-          {/* <div className="hoverOverlay"> */}
           <p className="item projectDescription">{project.description}</p>
           <div className="item projectPageLink"> Learn More</div>
         </Link>
-        {/* </div> */}
       </SingleProjectStyles>
     </>
   );
 }
 
 export default function ProjectList({ projects }) {
-  console.log(projects);
   return (
     <>
       <ProjectGridStyles>
