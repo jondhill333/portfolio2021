@@ -10,11 +10,11 @@ import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
   color: var(--white);
-  height: 1000px;
+  height: 1250px;
   position: relative;
   h1 {
     font-family: "Kalam";
-    margin: 2% 0 1% 10%;
+    margin: 2% 0 1% 0%;
     padding: 0;
   }
   .projectsPageFooter {
@@ -35,16 +35,15 @@ const ProjectPageStyles = styled.div`
 `;
 
 export default function ProjectsPage({ data }) {
-  const projects = data.projects.nodes.sort(
-    (a, b) => Date.parse(b.date) - Date.parse(a.date)
-  );
-
+  const projects = data.projects.nodes
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+    .slice(0, 3);
   return (
     <>
       <SEO title="Projects" />
       <ProjectPageStyles>
         <h1>Projects</h1>
-        <ProjectsFilter />
+        {/* <ProjectsFilter /> */}
         <ProjectList projects={projects} />
       </ProjectPageStyles>
       <div className="projectsPageFooter">
@@ -59,6 +58,7 @@ export const query = graphql`
     projects: allSanityProjects {
       nodes {
         name
+        description
         introduction
         githubLink
         purpose
@@ -82,7 +82,7 @@ export const query = graphql`
         url
         desktopImage {
           asset {
-            fixed(width: 325, height: 220) {
+            fixed(width: 480, height: 320) {
               ...GatsbySanityImageFixed
             }
             fluid(maxWidth: 600) {
