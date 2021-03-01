@@ -14,7 +14,7 @@ const ProjectPageStyles = styled.div`
   position: relative;
   h1 {
     font-family: "Kalam";
-    margin: 3% 0 0% 0%;
+    margin: 5% 0 0% 0%;
     padding: 0;
   }
   .projectsPageFooter {
@@ -22,13 +22,11 @@ const ProjectPageStyles = styled.div`
     bottom: 0;
   }
   @media (max-width: 1000px) {
-    height: 1300px;
+    height: 2000px;
   }
   @media (max-width: 750px) {
-    height: 2100px;
-    justify-content: center;
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 5% 0 2% 0%;
     }
   }

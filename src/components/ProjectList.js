@@ -12,12 +12,8 @@ const ProjectGridStyles = styled.div`
   margin: 5vh auto;
   justify-content: center;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 325px);
-  }
-  @media (max-width: 750px) {
-    grid-template-columns: 325px;
-    justify-items: center;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -31,7 +27,7 @@ const SingleProjectStyles = styled.div`
     text-decoration: none;
   }
   .item {
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .image {
@@ -45,7 +41,7 @@ const SingleProjectStyles = styled.div`
 
   .title {
     font-family: "Kalam";
-    margin-top: 10px;
+    margin-top: 25px;
     font-size: 3rem;
   }
 
@@ -72,9 +68,16 @@ const SingleProjectStyles = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 500px) {
-    grid-template-columns: 1fr;
-    justify-items: center;
+  @media (max-width: 600px) {
+    .title {
+      font-size: 2.5rem;
+    }
+    .projectDescription {
+      font-size: 1.5rem;
+    }
+    .item {
+      margin: 10px 0;
+    }
   }
 `;
 
@@ -84,9 +87,9 @@ function SingleProject({ project }) {
       <SingleProjectStyles>
         <Link className="link" href={`/projects/${project.slug.current}`}>
           <Img
-            fixed={project.desktopImage.asset.fixed}
+            fluid={project.desktopImage.asset.fluid}
             alt={project.name}
-            className=" item image"
+            className="item image"
           />
           <h3 className="item title">{project.name}</h3>
           <p className="item projectDescription">{project.description}</p>
