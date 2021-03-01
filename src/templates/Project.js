@@ -109,7 +109,7 @@ const ProjectPageStyles = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     overflow-x: hidden;
     align-items: center;
     .titleContainer {
