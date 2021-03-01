@@ -6,7 +6,7 @@ import CustomButton from "./customButton";
 
 const ProjectGridStyles = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   width: 100%;
   margin: 5vh auto;
@@ -22,79 +22,58 @@ const ProjectGridStyles = styled.div`
 `;
 
 const SingleProjectStyles = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  .imageAndTitleDisplay {
-    z-index: 1;
-    display: block;
+  display: flex;
+  flex-direction: column;
+
+  .link {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
   }
-  .imageAndTitleDisplay:hover {
-    display: none;
+  .item {
+    margin: 10px 0;
   }
+
   .image {
     border-radius: 10px;
-    opacity: 0.8;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* opacity: 0.8; */
+    transition: all 0.3s ease-in-out;
   }
-  .image:hover {
-    transition: scale(1.2);
+
+  :hover .image {
+    transform: scale(1.02);
   }
 
   .title {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     font-family: "Kalam";
-    font-size: 3.5rem;
+    margin-top: 10px;
+    font-size: 3rem;
   }
-  .hoverOverlay {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+
+  .projectDescription {
+    font-family: "IBM Plex Mono";
+  }
+  .projectPageLink {
+    color: var(--orange);
+    display: inline-block;
+    text-decoration: none;
+    width: fit-content;
+    font-family: "IBM Plex Mono";
+    /* height: 10px; */
+  }
+
+  .projectPageLink::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s;
+  }
+  :hover .projectPageLink:after {
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    background: var(--otherGrey);
-    border-radius: 10px;
-    transition: ease-in-out 0.5s;
-
-    .projectDescription {
-      font-family: "IBM Plex Mono";
-      text-align: center;
-      padding: 10px 0;
-    }
-  }
-  .hoverOverlay:hover {
-    opacity: 1;
   }
 
-  a {
-    text-align: center;
-    color: var(--white);
-    transition: ease-in-out 0.5s;
-    &:hover {
-      color: var(--orange);
-    }
-  }
-  h3 {
-    font-size: 2.5rem;
-    position: absolute;
-    bottom: 20px;
-    left: 32%;
-    text-align: center;
-  }
   @media (max-width: 500px) {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -105,28 +84,27 @@ function SingleProject({ project }) {
   return (
     <>
       <SingleProjectStyles>
-        <div className="imageAndTitleDisplay">
+        {/* <div className="imageAndTitleDisplay"> */}
+        <Link className="link" href={`/projects/${project.slug.current}`}>
           <Img
             fixed={project.desktopImage.asset.fixed}
             alt={project.name}
-            className="image"
+            className=" item image"
           />
-          <div className="title">
-            <span>{project.name}</span>
-          </div>
-        </div>
-        <div className="hoverOverlay">
-          <p className="projectDescription">{project.description}</p>
-          <Link to={`/projects/${project.slug.current}`}>
-            <h3>Learn More</h3>
-          </Link>
-        </div>
+          <h3 className="item title">{project.name}</h3>
+          {/* </div> */}
+          {/* <div className="hoverOverlay"> */}
+          <p className="item projectDescription">{project.description}</p>
+          <div className="item projectPageLink"> Learn More</div>
+        </Link>
+        {/* </div> */}
       </SingleProjectStyles>
     </>
   );
 }
 
 export default function ProjectList({ projects }) {
+  console.log(projects);
   return (
     <>
       <ProjectGridStyles>
