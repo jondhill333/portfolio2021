@@ -27,7 +27,6 @@ const BioPageStyles = styled.div`
     }
   }
   .skillsGrid {
-    /* width: 90%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -126,12 +125,9 @@ export default function ContactPage() {
         <section className="experience">
           <h2>Other relevant skills and experience </h2>
           <ul>
+            <li>Experience building apps as part of remote developer teams</li>
             <li>
-              Experience working as part of remote developer teams to produce
-              products
-            </li>
-            <li>
-              Have worked as part of a cross functional agile team in paid
+              Have worked as part of a cross-functional agile team in paid
               employment
             </li>
           </ul>
