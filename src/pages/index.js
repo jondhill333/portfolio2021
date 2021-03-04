@@ -32,12 +32,67 @@ const HomePageStyles = styled.div`
     color: var(--white);
     padding: 0 0 0 4vw;
     line-height: 1.4;
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: justify;
     font-family: "Kalam";
-    display: flex;
-    align-items: center;
-    letter-spacing: ;
+    padding-top: 40px;
+  }
+
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes FadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .aboutSection {
+    animation-name: FadeIn;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .helloAndWelcomeSection {
+    animation-name: FadeOut;
+    animation-delay: 8.5s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+  }
+  .hello {
+    animation-delay: 1s;
+    animation-duration: 2s;
+  }
+  .welcome {
+    animation-delay: 2s;
+    animation-duration: 2.5s;
+  }
+  .two {
+    animation-delay: 4s;
+    animation-duration: 2.5s;
+  }
+
+  .three {
+    animation-delay: 6s;
+    animation-duration: 2.5s;
+  }
+
+  .four {
+    animation-delay: 8.5s;
+    animation-duration: 2.5s;
+  }
+  .five {
+    animation-delay: 11s;
+    animation-duration: 2.5s;
   }
   .indexPageFooter {
     position: absolute;
@@ -61,7 +116,7 @@ const HomePageStyles = styled.div`
     .about {
       margin: 3% 0 4% 0;
       width: 90%;
-      font-size: 2.5rem;
+      font-size: 3rem;
       padding: 0;
     }
   }
@@ -93,11 +148,30 @@ export default function HomePage({ data }) {
             />
           </div>
           <div className="about">
-            Hi, I&#39;m Jon and I’m a developer from the UK. I mainly focus on
-            the front end with a plan to go full stack in the future. I aim to
-            build performant and great-looking products with clean and
-            maintainable code. I like panda&#39;s, red wine and mountains
-            &#46;&#46;&#46; amongst others things.
+            <div>
+              <div className="helloAndWelcomeSection">
+                <span className="aboutSection hello">
+                  Hello,{" "}
+                  <span className="aboutSection welcome">and welcome.</span>{" "}
+                </span>
+              </div>
+              <span className="aboutSection two">
+                {" "}
+                I’m Jon and I’m a developer.
+              </span>{" "}
+              <span className="aboutSection three">
+                My passion is building things and getting stuck into complex
+                problems.
+              </span>
+              <span className="aboutSection four">
+                {" "}
+                I love the extensive learning opportunities that a life in code
+                brings.{" "}
+              </span>
+              <span className="aboutSection five">
+                I am currently looking for a new opportunity.
+              </span>
+            </div>
           </div>
         </section>
         <div className="indexPageFooter">
