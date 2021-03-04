@@ -19,10 +19,22 @@ const BioPageStyles = styled.div`
     margin-bottom: 4vh;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
   }
   a {
     &:hover {
+      color: var(--orange);
+    }
+  }
+  .skillsGrid {
+    /* width: 90%; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 2% auto 0 auto;
+    justify-content: center;
+    font-size: 1.8rem;
+    span {
       color: var(--orange);
     }
   }
@@ -61,17 +73,21 @@ export default function ContactPage() {
       <BioPageStyles>
         <h1 className="pageTitle">Bio</h1>
         <section className="technicals">
-          <h2>Technicals</h2>
-          <ul>
-            <li>I wrote my first line of code on 30th March 2019</li>
-            <li>
-              Confident with React, Javascript, CSS, HTML, Styled Components
-            </li>
-            <li>Experienced with Next.js, Gatsby and SASS </li>
-            <li>
-              I'm getting better at Typescript, Test Driven Development and Node
-            </li>
-          </ul>
+          <h2>Technical Skills</h2>
+          <div className="skillsGrid">
+            <span>React</span>
+            <span>Git</span>
+            <span>CSS</span>
+            <span>Styled Components</span>
+            <span>Vanilla JS</span>
+            <span>Next.js</span>
+            <span>Gatsby</span>
+            <span>Mongoose</span>
+            <span>Sketch</span>
+            <span>Typescript</span>
+            <span>Test Driven Development</span>
+            <span>Adobe XD</span>
+          </div>
         </section>
         <section className="values">
           <h2>Values</h2>
@@ -108,12 +124,16 @@ export default function ContactPage() {
         </section>
 
         <section className="experience">
-          <h2>Experience areas</h2>
+          <h2>Other relevant skills and experience </h2>
           <ul>
-            <li>Administrative &#47; support functions &#45; 2 years</li>
-            <li>Customer service &#45; 6 years</li>
-            <li>Product ownership &#47; project management &#45; 2 years</li>
-            <li>Account management &#47; client service &#45; 3 years </li>
+            <li>
+              Experience working as part of remote developer teams to produce
+              products
+            </li>
+            <li>
+              Have worked as part of a cross functional agile team in paid
+              employment
+            </li>
           </ul>
         </section>
       </BioPageStyles>
