@@ -165,7 +165,7 @@ export default function HomePage({ data }) {
               </span>
               <span className="aboutSection four">
                 {" "}
-                I love the extensive learning opportunities that a life in code
+                I love the extensive learning opportunities that a life of code
                 brings.{" "}
               </span>
               <span className="aboutSection five">
