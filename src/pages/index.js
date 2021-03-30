@@ -61,37 +61,37 @@ const HomePageStyles = styled.div`
   }
   .helloAndWelcomeSection {
     animation-name: FadeOut;
-    animation-delay: 8.5s;
-    animation-duration: 3s;
+    animation-delay: 8s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     font-size: 3rem;
     width: 100%;
     text-align: center;
   }
   .hello {
-    animation-delay: 1s;
-    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-duration: 1.5s;
   }
   .welcome {
-    animation-delay: 2s;
-    animation-duration: 2.5s;
+    animation-delay: 1.5s;
+    animation-duration: 1.5s;
   }
   .two {
+    animation-delay: 2.5s;
+    animation-duration: 2s;
+  }
+
+  .three {
     animation-delay: 4s;
     animation-duration: 2.5s;
   }
 
-  .three {
+  .four {
     animation-delay: 6s;
     animation-duration: 2.5s;
   }
-
-  .four {
-    animation-delay: 8.5s;
-    animation-duration: 2.5s;
-  }
   .five {
-    animation-delay: 11s;
+    animation-delay: 8s;
     animation-duration: 2.5s;
   }
   .indexPageFooter {
@@ -129,12 +129,20 @@ const HomePageStyles = styled.div`
 `;
 
 export default function HomePage({ data }) {
-  console.log(data);
   const profilePic = data.images.nodes.filter(
     (pic) => pic.name === "profile picture"
   );
   const profilePicFluid = profilePic[0].image.asset.fluid;
-  console.log(profilePicFluid);
+  let visited;
+
+  React.useEffect(() => {
+    const storage = window.localStorage;
+    storage.setItem("alreadyVisited", true);
+    visited = storage.getItem(true);
+    // return visited
+  });
+
+  // window.localStorage.clear();
   return (
     <>
       <SEO title="Home" />

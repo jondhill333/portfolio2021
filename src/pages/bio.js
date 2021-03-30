@@ -125,12 +125,19 @@ export default function ContactPage() {
         <section className="experience">
           <h2>Other relevant skills and experience </h2>
           <ul>
-            <li>Experience building apps as part of remote developer teams</li>
-            <li>
-              Have worked as part of a cross-functional agile team in paid
-              employment
-            </li>
+            <li>Remote work experience</li>
+            <li>I have worked as part of a cross-functional agile team</li>
           </ul>
+        </section>
+        <section>
+          <p className="resume">
+            For perspective employers (or if you&#39;re just a curious soul)
+            please find a downloadable version of my current resume/CV{" "}
+            <a href={CV} download>
+              here
+            </a>
+            .
+          </p>
         </section>
       </BioPageStyles>
       <div className="bioPageFooter">
