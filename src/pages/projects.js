@@ -38,7 +38,7 @@ const ProjectPageStyles = styled.div`
 export default function ProjectsPage({ data }) {
   const projects = data.projects.nodes
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-    .slice(0, 3);
+    .slice(0, 4);
   return (
     <>
       <SEO title="Projects" />
