@@ -33,6 +33,7 @@ const SingleProjectStyles = styled.div`
   .image {
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
+    max-height: 300px;
   }
 
   :hover .image {
