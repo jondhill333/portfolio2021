@@ -16,6 +16,8 @@ const ContactPageStyles = styled.div`
     margin-bottom: 4vh;
   }
   a {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
     &:hover {
       color: var(--orange);
     }
@@ -53,8 +55,6 @@ export default function ContactPage() {
         <section>
           <h1 className="pageTitle">Contact</h1>
           <p className="intro">
-            I am interested in paid work, volunteer work, open source,
-            contract&#47; freelance or simply connecting for study purposes.
             Please use the links at the top of the page to get in contact with
             me. I welcome any opportunity to connnect with like-minded people so
             we can better ourselves and build a happier future.
@@ -62,8 +62,7 @@ export default function ContactPage() {
         </section>
         <section>
           <p className="resume">
-            For perspective employers (or if you&#39;re just a curious soul)
-            please find a downloadable version of my current resume/CV{" "}
+            Please find a downloadable version of my current resume/CV{" "}
             <a href={CV} download>
               here
             </a>

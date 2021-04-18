@@ -22,6 +22,12 @@ const BioPageStyles = styled.div`
     font-size: 2.7rem;
   }
   a {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+  a {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
     &:hover {
       color: var(--orange);
     }
@@ -131,8 +137,7 @@ export default function ContactPage() {
         </section>
         <section>
           <p className="resume">
-            For perspective employers (or if you&#39;re just a curious soul)
-            please find a downloadable version of my current resume/CV{" "}
+            Please find a downloadable version of my current resume/CV{" "}
             <a href={CV} download>
               here
             </a>

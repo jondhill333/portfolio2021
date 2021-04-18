@@ -15,6 +15,14 @@ const HomePageStyles = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  a {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      color: var(--orange);
+    }
+  }
+
   section {
     display: flex;
     flex-direction: row;
@@ -32,7 +40,7 @@ const HomePageStyles = styled.div`
     color: var(--white);
     padding: 0 0 0 4vw;
     line-height: 1.4;
-    font-size: 2.8rem;
+    font-size: 3rem;
     text-align: justify;
     font-family: "Kalam";
     padding-top: 40px;
@@ -177,7 +185,11 @@ export default function HomePage({ data }) {
                 brings.{" "}
               </span>
               <span className="aboutSection five">
-                I am currently looking for a new opportunity.
+                I am currently working at{" "}
+                <a href="https://dodec.co.uk/" target="_blank">
+                  Dodec
+                </a>
+                .
               </span>
             </div>
           </div>
