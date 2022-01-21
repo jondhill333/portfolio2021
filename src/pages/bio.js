@@ -39,6 +39,8 @@ const BioPageStyles = styled.div`
     margin: 2% auto 0 auto;
     justify-content: center;
     font-size: 1.8rem;
+    row-gap: 30px;
+
 
       span {
         color: var(--orange);
