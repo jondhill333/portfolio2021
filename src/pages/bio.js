@@ -39,49 +39,50 @@ const BioPageStyles = styled.div`
     margin: 2% auto 0 auto;
     justify-content: center;
     font-size: 1.8rem;
-    span {
-      color: var(--orange);
-    }
-  }
-  .bioPageFooter {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    bottom: 0;
-    left: 0;
-  }
-  @media (max-width: 1250px) {
-    width: 90%;
-  }
-  @media (max-width: 750px) {
-    width: 100%;
-    section {
-      line-height: 1.3;
-    }
-    h1 {
-      font-size: 3.5rem;
-      margin: 2% 0 2% 0%;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-    li {
-      font-size: 1.5rem;
-    }
-  }
-  @media (max-width: 500px) {
-    .skillsGrid {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      font-size: 1.6rem;
-      row-gap: 10px;
-      margin-top: 5%;
 
+      span {
+        color: var(--orange);
+      }
     }
-    .skillsGrid span {
-      text-align:center;
+    .bioPageFooter {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      bottom: 0;
+      left: 0;
     }
-  }
+    @media (max-width: 1250px) {
+      width: 90%;
+    }
+    @media (max-width: 750px) {
+      width: 100%;
+      section {
+        line-height: 1.3;
+      }
+      h1 {
+        font-size: 3.5rem;
+        margin: 2% 0 2% 0%;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      li {
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        font-size: 1.6rem;
+        row-gap: 10px;
+        margin-top: 5%;
+
+      }
+      .skillsGrid span {
+        text-align:center;
+      }
+    }
 `;
 
 export default function ContactPage() {
