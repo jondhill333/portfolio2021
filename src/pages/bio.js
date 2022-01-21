@@ -69,6 +69,19 @@ const BioPageStyles = styled.div`
       font-size: 1.5rem;
     }
   }
+  @media (max-width: 500px) {
+    .skillsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      font-size: 1.6rem;
+      row-gap: 10px;
+      margin-top: 5%;
+
+    }
+    .skillsGrid span {
+      text-align:center;
+    }
+  }
 `;
 
 export default function ContactPage() {
@@ -81,17 +94,17 @@ export default function ContactPage() {
           <h2>Technical Skills</h2>
           <div className="skillsGrid">
             <span>React</span>
+            <span>Typescript</span>
             <span>Git</span>
-            <span>CSS</span>
-            <span>Styled Components</span>
-            <span>Vanilla JS</span>
+            <span>PostgresQL</span>
+            <span>Nest.js</span>
+            <span>Wordpress</span>
             <span>Next.js</span>
             <span>Gatsby</span>
-            <span>Mongoose</span>
-            <span>Sketch</span>
-            <span>Typescript</span>
-            <span>Test Driven Development</span>
-            <span>Adobe XD</span>
+            <span>CSS</span>
+            <span>Styled Components</span>
+            <span>Google Analytics</span>
+            <span>Google Tag Manager</span>
           </div>
         </section>
         <section className="values">
