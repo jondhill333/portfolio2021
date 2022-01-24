@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 const HomePageStyles = styled.div`
   width: 100%;
-  height: 90%;
+  height: auto;
   margin: 0 auto;
   padding: 8% 0;
   display: flex;

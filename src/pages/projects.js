@@ -10,7 +10,7 @@ import Footer from "../components/footer";
 
 const ProjectPageStyles = styled.div`
   color: var(--white);
-  height: 1350px;
+  height: auto;
   position: relative;
   h1 {
     font-family: "Kalam";

@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 
 const BioPageStyles = styled.div`
   width: 80%;
-  height: 1100px;
+  height: auto;
   margin: 1% auto;
   display: flex;
   flex-direction: column;
@@ -42,10 +42,10 @@ const BioPageStyles = styled.div`
     row-gap: 30px;
 
 
-      span {
-        color: var(--orange);
-      }
+    span {
+      color: var(--orange);
     }
+  }
     .bioPageFooter {
       position: relative;
       width: 100%;
